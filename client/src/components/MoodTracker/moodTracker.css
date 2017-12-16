@@ -17,7 +17,6 @@
 .calendar-name {
   background: #fff;
   border: 1px solid #999;
-  float: left;
   font-size: 24px;
   font-weight: bold;
   line-height: 34px;
@@ -26,7 +25,17 @@
   margin-top: -1px;
   padding: 0;
   text-align: center;
-  width: 560px;
+  width: 552px;
+}
+
+.calendar-name:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.calendar-row {
+  display: block
 }
 
 .calendar-row:after {
@@ -34,4 +43,5 @@
   content: "";
   display: table;
 }
+
 

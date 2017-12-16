@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 // import './App.css';
-import Calendar from './MoodTracker/moodTrackerComponent';
+import Calendar from './components/MoodTracker/moodTrackerComponent';
 
 class App extends Component {
   /*
