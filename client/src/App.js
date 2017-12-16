@@ -1,25 +1,16 @@
-import React, { Component } from 'react';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Dashboard from "./components/Dashboard";
+import Resources from "./components/Resources";
 
-class App extends Component {
-  state = {users: []}
-
-  componentDidMount() {
-    fetch('/users')
-      .then(res => res.json())
-      .then(users => this.setState({ users }));
-  }
-
-  render() {
-    return (
-      <div className="App">
-        <h1>Users</h1>
-        {this.state.users.map(user =>
-          <div key={user.id}>{user.username}</div>
-        )}
-      </div>
-    );
-  }
-}
+const App = () =>
+  <Router>
+    <div>
+      <Switch>
+        <Route exact path="/" component={Dashboard} />
+        <Route exact path="/resources" component={Resources}/>
+      </Switch>
+    </div>
+  </Router>;
 
 export default App;
