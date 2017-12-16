@@ -1,12 +1,12 @@
 import React from "react";
-import Nav from '../Nav';
-import Container from '../Bootstrap/Container';
-import Row from '../Bootstrap/Row';
-import Col from '../Bootstrap/Col';
+import Nav from '../../Nav';
+import Container from '../../Bootstrap/Container';
+import Row from '../../Bootstrap/Row';
+import Col from '../../Bootstrap/Col';
 
 import {
   populateArticles
-} from '../../domains/domainResources/actionsResources';
+} from '../../../domains/domainResources/actionsResources';
 
 const Resources = () => (
   <div>
