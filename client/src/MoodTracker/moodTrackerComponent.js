@@ -35,6 +35,9 @@ class Calendar extends React.Component {
     // I need to find a way to generate calendars dynamically
     return(
       <div>
+        <div className="calendar-name">
+          <p>January</p>
+        </div>
         <div className="calendar-row">
           {this.renderSquare('S')}
           {this.renderSquare('M')}
