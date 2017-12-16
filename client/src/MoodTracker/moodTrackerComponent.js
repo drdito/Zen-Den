@@ -1,6 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
+import './moodTracker.css';
 
 
 // Date compontent. Functonal component.
@@ -25,8 +24,7 @@ class Calendar extends React.Component {
 
   renderSquare(i) {
     return ( 
-      // two props are being passed down to Square, "value" and "onClick"
-      // Square can call the onClick function
+      // value prop is being passed down to Date component
       <Date value={i}
       />
     ); 
@@ -36,18 +34,63 @@ class Calendar extends React.Component {
     return(
       <div>
         <div className="calendar-row">
+          {this.renderSquare(null)}
+          {this.renderSquare(null)}
+          {this.renderSquare(null)}
+          {this.renderSquare(null)}
+          {this.renderSquare(null)}
+          {this.renderSquare(null)}
+          {this.renderSquare(4)}
         </div>
         <div className="calendar-row">
+          {this.renderSquare(null)}
+          {this.renderSquare(null)}
+          {this.renderSquare(null)}
+          {this.renderSquare(null)}
+          {this.renderSquare(null)}
+          {this.renderSquare(null)}
+          {this.renderSquare(4)}
         </div>
         <div className="calendar-row">
+          {this.renderSquare(null)}
+          {this.renderSquare(null)}
+          {this.renderSquare(null)}
+          {this.renderSquare(null)}
+          {this.renderSquare(null)}
+          {this.renderSquare(null)}
+          {this.renderSquare(4)}
         </div>
         <div className="calendar-row">
+          {this.renderSquare(null)}
+          {this.renderSquare(null)}
+          {this.renderSquare(null)}
+          {this.renderSquare(null)}
+          {this.renderSquare(null)}
+          {this.renderSquare(null)}
+          {this.renderSquare(4)}
         </div>
         <div className="calendar-row">
+          {this.renderSquare(null)}
+          {this.renderSquare(null)}
+          {this.renderSquare(null)}
+          {this.renderSquare(null)}
+          {this.renderSquare(null)}
+          {this.renderSquare(null)}
+          {this.renderSquare(4)}
         </div>
         <div className="calendar-row">
+          {this.renderSquare(null)}
+          {this.renderSquare(null)}
+          {this.renderSquare(null)}
+          {this.renderSquare(null)}
+          {this.renderSquare(null)}
+          {this.renderSquare(null)}
+          {this.renderSquare(4)}
         </div>
+
       </div>
     )
   }
 }
+
+export default Calendar;

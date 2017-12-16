@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import './App.css';
+// import './App.css';
+import Calendar from './MoodTracker/moodTrackerComponent';
 
 class App extends Component {
+  /*
   state = {users: []}
 
   componentDidMount() {
@@ -9,14 +11,13 @@ class App extends Component {
       .then(res => res.json())
       .then(users => this.setState({ users }));
   }
+  */
 
   render() {
     return (
       <div className="App">
-        <h1>Users</h1>
-        {this.state.users.map(user =>
-          <div key={user.id}>{user.username}</div>
-        )}
+        <h1>Mood Tracker</h1>
+          <Calendar />
       </div>
     );
   }

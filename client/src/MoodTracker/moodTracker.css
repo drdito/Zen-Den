@@ -13,3 +13,9 @@
   text-align: center;
   width: 34px;
 }
+
+.calendar-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
