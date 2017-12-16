@@ -1,26 +1,16 @@
-import React, { Component } from 'react';
-// import './App.css';
-import Calendar from './components/MoodTracker/moodTrackerComponent';
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Dashboard from "./components/Containers/Dashboard";
+import Resources from "./components/Containers/Resources";
 
-class App extends Component {
-  /*
-  state = {users: []}
-
-  componentDidMount() {
-    fetch('/users')
-      .then(res => res.json())
-      .then(users => this.setState({ users }));
-  }
-  */
-
-  render() {
-    return (
-      <div className="App">
-        <h1>Mood Tracker</h1>
-          <Calendar />
-      </div>
-    );
-  }
-}
+const App = () =>
+  <Router>
+    <div>
+      <Switch>
+        <Route exact path="/" component={Dashboard} />
+        <Route exact path="/resources" component={Resources}/>
+      </Switch>
+    </div>
+  </Router>;
 
 export default App;

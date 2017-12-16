@@ -1,6 +1,5 @@
 import React from "react";
 import Nav from '../../Nav';
-import Footer from '../../Footer';
 import Container from '../../Bootstrap/Container';
 import Row from '../../Bootstrap/Row';
 import Col from '../../Bootstrap/Col';
@@ -50,7 +49,7 @@ const Resources = () => (
     </Row>
     <Row>
       <Col size="md-12 lg-12">
-        <Footer/>
+      
       </Col>
     </Row>
   </div>

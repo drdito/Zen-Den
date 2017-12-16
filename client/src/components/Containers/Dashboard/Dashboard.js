@@ -1,6 +1,5 @@
 import React from "react";
 import Nav from '../../Nav';
-import Footer from '../../Footer';
 import Container from '../../Bootstrap/Container';
 import Row from '../../Bootstrap/Row';
 import Col from '../../Bootstrap/Col';
