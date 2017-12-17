@@ -11,7 +11,7 @@ const Breathe = () => (
     <div>
     <Nav/>
     <Container>
-      <div id="breathe">
+      <div className="row justify-content-center" id="breathe">
         <DoubleBounce size={400} />
       </div>
     </Container>
