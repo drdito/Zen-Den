@@ -3,6 +3,7 @@
 
 import React from 'react';
 import Date from '../Date';
+import Day from '../Day';
 
 
 class Calendar extends React.Component {
@@ -22,6 +23,13 @@ class Calendar extends React.Component {
     ); 
   }
 
+  renderDay(i) {
+    return ( 
+      // value prop is being passed down to Day component
+      <Day value={i} />
+    ); 
+  }
+
   render() {
     // Hard coding calendar for January 2018.
     // I need to find a way to generate calendars dynamically
@@ -31,13 +39,13 @@ class Calendar extends React.Component {
           <p>January 2018</p>
         </div>
         <div className="calendar-row">
-          {this.renderSquare('S')}
-          {this.renderSquare('M')}
-          {this.renderSquare('T')}
-          {this.renderSquare('W')}
-          {this.renderSquare('Th')}
-          {this.renderSquare('F')}
-          {this.renderSquare('S')}
+          {this.renderDay('S')}
+          {this.renderDay('M')}
+          {this.renderDay('T')}
+          {this.renderDay('W')}
+          {this.renderDay('Th')}
+          {this.renderDay('F')}
+          {this.renderDay('S')}
         </div>
         <div className="calendar-row">
           {this.renderSquare(null)}
