@@ -15,7 +15,7 @@ const MoodTracker = () => (
       </Col>
     </Row>
     <Container>
-      <div className="moods">
+      <div className="row justify-content-center">
         <Calendar />
         <MoodPicker />
       </div>
