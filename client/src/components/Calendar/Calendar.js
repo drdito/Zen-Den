@@ -99,7 +99,7 @@ class Calendar extends React.Component {
           {this.renderSquare(null)}
           {this.renderSquare(null)}
           {this.renderSquare(null)}
-          {this.renderSquare(4)}
+          {this.renderSquare(null)}
         </div>
 
       </div>
