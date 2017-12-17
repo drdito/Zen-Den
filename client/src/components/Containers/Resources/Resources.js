@@ -1,6 +1,7 @@
 import React from "react";
 import "./resources.css";
 import Nav from '../../Nav';
+import Article from '../../Article';
 import Container from '../../Bootstrap/Container';
 import Row from '../../Bootstrap/Row';
 import Col from '../../Bootstrap/Col';
@@ -32,7 +33,7 @@ const Resources = () => (
         <div class="card">
           <div class="card-body">
             <h4 class="card-title">Articles by People Like You</h4>
-            <div id="articles"/>
+              <Article />
           </div>
         </div>
       </Col>
