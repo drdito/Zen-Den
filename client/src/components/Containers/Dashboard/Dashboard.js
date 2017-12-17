@@ -1,5 +1,9 @@
 import React from "react";
+<<<<<<< Updated upstream
 import "./dashboard.css";
+=======
+import Nav from "../../Nav";
+>>>>>>> Stashed changes
 import Container from "../../Bootstrap/Container";
 import Row from "../../Bootstrap/Row";
 import Col from "../../Bootstrap/Col";
@@ -7,6 +11,7 @@ import Col from "../../Bootstrap/Col";
 import { populateArticles } from "../../../domains/domainResources/actionsResources";
 
 const Dashboard = () => (
+<<<<<<< Updated upstream
   <Container>
     <header className="masthead">
       <div className="intro-body">
@@ -52,6 +57,45 @@ const Dashboard = () => (
         </div>
     </header>
   </Container>
+=======
+  <div>
+    <Row>
+      <Col size="md-6 lg-2">
+        <button
+          type="button"
+          class="btn btn-secondary btn-lg"
+          onClick={() => (window.location.href = "/breathe")}
+        >
+          Breathe
+        </button>
+      </Col>
+      <Col size="md-6 lg-2">
+        <button type="button" class="btn btn-secondary btn-lg" onClick={() => (window.location.href = "/moodtracker")}>
+          Mood Tracker
+        </button>
+      </Col>
+    </Row>
+    <Row>
+      <Col size="md-6 lg-2">
+        <button type="button" class="btn btn-secondary btn-lg" onClick={() => (window.location.href = "/login")}>
+          Log Out
+        </button>
+      </Col>
+    </Row>
+    <Row>
+      <Col size="md-6 lg-2">
+        <button type="button" class="btn btn-secondary btn-lg" onClick={() => (window.location.href = "/blog")}>
+          Blog
+        </button>
+      </Col>
+      <Col size="md-6 lg-2">
+        <button type="button" class="btn btn-secondary btn-lg" onClick={() => (window.location.href = "/resources")}>
+          Resources
+        </button>
+      </Col>
+    </Row>
+  </div>
+>>>>>>> Stashed changes
 );
 
 export default Dashboard;
