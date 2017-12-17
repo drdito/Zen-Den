@@ -1,4 +1,5 @@
 import React from "react";
+import "./resources.css";
 import Nav from '../../Nav';
 import Container from '../../Bootstrap/Container';
 import Row from '../../Bootstrap/Row';
@@ -11,12 +12,13 @@ import {
 const Resources = () => (
   <div>
     <Row>
-      <Col size="md-12 lg-12">
+      <Col size="lg-12">
         <Nav/>
       </Col>
     </Row>
+    <Container>
     <Row>
-      <Col size="md-12 lg-3">
+      <Col size="lg-3">
         <div class="card">
           <div class="card-body">
             <h4 class="card-title">You are Not Alone</h4>
@@ -26,7 +28,7 @@ const Resources = () => (
           </div>
         </div>
       </Col>
-      <Col size="md-12 lg-3">
+      <Col size="lg-6">
         <div class="card">
           <div class="card-body">
             <h4 class="card-title">Articles by People Like You</h4>
@@ -34,21 +36,22 @@ const Resources = () => (
           </div>
         </div>
       </Col>
-      <Col size="md-12 lg-3">
+      <Col size="lg-3">
         <div class="card">
           <div class="card-body">
             <h4 class="card-title">Resources</h4>
-            <a class="card-text" href="https://adaa.org/" target="_blank">Anxiety and Depression Association of America</a>
-            <a class="card-text" href="https://www.nami.org/" target="_blank">National Alliance on Mental Illness</a>
-            <a class="card-text" href="https://suicidepreventionlifeline.org/" target="_blank">National Suicide Prevention Lifeline</a>
-            <a class="card-text" href="https://www.psychologytoday.com/" target="_blank">Psychology Today</a>
-            <a class="card-text" href="https://therapists.psychologytoday.com/rms/" target="_blank">Find a Therapist</a>
+            <p><a class="card-text" href="https://adaa.org/" target="_blank">Anxiety and Depression Association of America</a></p>
+            <p><a class="card-text" href="https://www.nami.org/" target="_blank">National Alliance on Mental Illness</a></p>
+            <p><a class="card-text" href="https://suicidepreventionlifeline.org/" target="_blank">National Suicide Prevention Lifeline</a></p>
+            <p><a class="card-text" href="https://www.psychologytoday.com/" target="_blank">Psychology Today</a></p>
+            <p><a class="card-text" href="https://therapists.psychologytoday.com/rms/" target="_blank">Find a Therapist</a></p>
           </div>
         </div>
       </Col>
     </Row>
+    </Container>
     <Row>
-      <Col size="md-12 lg-12">
+      <Col size="lg-12">
       
       </Col>
     </Row>
