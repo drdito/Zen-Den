@@ -1,0 +1,54 @@
+.masthead {
+  display: table;
+  width: auto;
+  height: auto;
+  padding: 200px;
+  text-align: center;
+  color: white;
+  background-color: rgba(4, 46, 48, .7);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  margin: auto;
+  margin-top: 10rem;
+}
+
+.masthead .intro-body {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.masthead .intro-body .brand-heading {
+  color: white;
+  font-size: 50px;
+}
+
+.masthead .intro-body .intro-text {
+  font-size: 18px;
+}
+
+@media (min-width: 768px) {
+  .masthead {
+    height: 100%;
+    padding: 0;
+  }
+  .masthead .intro-body .brand-heading {
+    font-size: 100px;
+  }
+  .masthead .intro-body .intro-text {
+    font-size: 22px;
+  }
+}
+
+.btn {
+ background-color: #242215;
+ border-color: #777251;
+ margin: 10px;
+ margin-bottom: 20px;
+}
+
+.btn:hover {
+  background-color: #777251;
+  border-color: white;
+}

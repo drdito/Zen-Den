@@ -1,6 +1,7 @@
 import React from "react";
 import "./resources.css";
 import Nav from '../../Nav';
+import Article from '../../Article';
 import Container from '../../Bootstrap/Container';
 import Row from '../../Bootstrap/Row';
 import Col from '../../Bootstrap/Col';
@@ -32,7 +33,7 @@ const Resources = () => (
         <div class="card">
           <div class="card-body">
             <h4 class="card-title">Articles by People Like You</h4>
-            <div id="articles"/>
+              <Article />
           </div>
         </div>
       </Col>
@@ -40,21 +41,16 @@ const Resources = () => (
         <div class="card">
           <div class="card-body">
             <h4 class="card-title">Resources</h4>
-            <p><a class="card-text" href="https://adaa.org/" target="_blank">Anxiety and Depression Association of America</a></p>
-            <p><a class="card-text" href="https://www.nami.org/" target="_blank">National Alliance on Mental Illness</a></p>
-            <p><a class="card-text" href="https://suicidepreventionlifeline.org/" target="_blank">National Suicide Prevention Lifeline</a></p>
-            <p><a class="card-text" href="https://www.psychologytoday.com/" target="_blank">Psychology Today</a></p>
-            <p><a class="card-text" href="https://therapists.psychologytoday.com/rms/" target="_blank">Find a Therapist</a></p>
+              <p><a class="card-text" href="https://adaa.org/" target="_blank" rel="noopener noreferrer">Anxiety and Depression Association of America</a></p>
+              <p><a class="card-text" href="https://www.nami.org/" target="_blank" rel="noopener noreferrer">National Alliance on Mental Illness</a></p>
+              <p><a class="card-text" href="https://suicidepreventionlifeline.org/" target="_blank" rel="noopener noreferrer">National Suicide Prevention Lifeline</a></p>
+              <p><a class="card-text" href="https://www.psychologytoday.com/" target="_blank" rel="noopener noreferrer">Psychology Today</a></p>
+              <p><a class="card-text" href="https://therapists.psychologytoday.com/rms/" target="_blank" rel="noopener noreferrer">Find a Therapist</a></p>
           </div>
         </div>
       </Col>
     </Row>
     </Container>
-    <Row>
-      <Col size="lg-12">
-      
-      </Col>
-    </Row>
   </div>
 );
 
