@@ -8,52 +8,49 @@ import { populateArticles } from "../../../domains/domainResources/actionsResour
 
 const Dashboard = () => (
   <Container>
-    <div>
-      <Row>
-        <Col size="md-6 lg-4">
-          <button
-            type="button"
-            class="btn btn-secondary btn-lg leftRow"
-            id="breathe"
-            onClick={() => (window.location.href = "/breathe")}
-          >
-            Breathe
-          </button>
-          <button
-            type="button"
-            id="blog"
-            class="btn btn-secondary btn-lg leftRow"
-            onClick={() => (window.location.href = "/blog")}>
-            Blog
-          </button>
-        </Col>
-        <Col size="md-6 lg-4">
-          <button
-            type="button"
-            id="logOut"
-            class="btn btn-secondary btn-lg middleRow"
-            onClick={() => (window.location.href = "/login")}>
-            Log Out
-          </button>
-        </Col>
-        <Col size="md-6 lg-4">
-          <button 
-            type="button" 
-            id="moodTracker"
-            class="btn btn-secondary btn-lg rightRow" 
-            onClick={() => (window.location.href = "/moodtracker")}>
-            Mood Tracker
-          </button>
-          <button
-            type="button"
-            id="resources"
-            class="btn btn-secondary btn-lg rightRow"
-            onClick={() => (window.location.href = "/resources")}>
-            Resources
-          </button>
-        </Col>
-      </Row>
-    </div>
+    <header className="masthead">
+      <div className="intro-body">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-8 mx-auto">
+              <h1 className="brand-heading">Zen Den</h1>
+              <p className="intro-text">A one stop shop for managing your anxiety.</p>
+              <button
+                type="button"
+                class="btn btn-secondary btn-lg leftRow"
+                onClick={() => (window.location.href = "/breathe")}
+              >
+                Breathe
+              </button>
+              <button
+                type="button"
+                class="btn btn-secondary btn-lg leftRow"
+                onClick={() => (window.location.href = "/blog")}>
+                Blog
+              </button>
+              <button
+                type="button"
+                class="btn btn-secondary btn-lg middleRow"
+                onClick={() => (window.location.href = "/login")}>
+                Log Out
+              </button>
+              <button
+                type="button"
+                class="btn btn-secondary btn-lg rightRow"
+                onClick={() => (window.location.href = "/moodtracker")}>
+                Mood Tracker
+              </button>
+              <button
+                type="button"
+                class="btn btn-secondary btn-lg rightRow"
+                onClick={() => (window.location.href = "/resources")}>
+                Resources
+              </button>
+            </div>
+            </div>
+          </div>
+        </div>
+    </header>
   </Container>
 );
 
