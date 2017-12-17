@@ -7,7 +7,6 @@ const Breathe = () => (
   <div>
     <Nav/>
     <DoubleBounce size={500}/>
-
   </div>
 );
 
