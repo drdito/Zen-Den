@@ -16,7 +16,7 @@ const Nav = () => (
           <a className="nav-link" href="/breathe">Breathe</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="/moods">Mood Tracker</a>
+          <a className="nav-link" href="/moodtracker">Mood Tracker</a>
         </li>
         <li className="nav-item">
           <a className="nav-link" href="/blog">Blog</a>
