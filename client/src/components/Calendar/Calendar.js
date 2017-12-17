@@ -1,17 +1,10 @@
+// Calendar Component
+// Displays the calendar for users to click on
+
 import React from 'react';
-import './moodTracker.css';
+import Date from '../Date';
 
 
-// Date compontent. Functonal component.
-const Date = (props) => {
-  return (
-    <button className="date">
-      {props.value}
-    </button>
-  );
-}
-
-// Calendar Class. Displays the calendar for users to click on
 class Calendar extends React.Component {
   /* Not sure what's happening with this block yet
   constructor(props) {
@@ -25,8 +18,7 @@ class Calendar extends React.Component {
   renderSquare(i) {
     return ( 
       // value prop is being passed down to Date component
-      <Date value={i}
-      />
+      <Date value={i} />
     ); 
   }
 
