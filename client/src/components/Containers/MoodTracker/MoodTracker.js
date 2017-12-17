@@ -1,9 +1,22 @@
 import React from 'react';
 import './moodTracker.css';
 import Calendar from '../../Calendar';
+import Nav from '../../Nav';
+import Container from '../../Bootstrap/Container';
+import Row from '../../Bootstrap/Row';
+import Col from '../../Bootstrap/Col';
 
 const MoodTracker = () => (
-  <Calendar />
+  <div>
+    <Row>
+      <Col size="lg-12">
+        <Nav/>
+      </Col>
+    </Row>
+    <Container>
+      <Calendar />
+    </Container> 
+  </div>
 );
 
 export default MoodTracker;
