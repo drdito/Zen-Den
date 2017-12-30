@@ -14,18 +14,24 @@ class MoodPicker extends React.Component {
                 </button>
               </div>
               <div className="modal-body">
-                <div className="moodColor" style={{backgroundColor: 'green'}}> {/*content*/}
-                </div>              
-                <div className="moodColor" style={{backgroundColor: 'yellow'}}> {/*happy*/}
-                </div>
-                <div className="moodColor" style={{backgroundColor: 'orange'}}> {/*anxious*/}
-                </div>
-                <div className="moodColor" style={{backgroundColor: 'blue'}}>   {/*depressed*/}
-                </div>
-                <div className="moodColor" style={{backgroundColor: 'red'}}>    {/*angry*/}
-                </div>
-                <div className="moodColor" style={{backgroundColor: 'black'}}>  {/*suicidal*/}
-                </div>
+                <button type="button" className="moodColor" style={{backgroundColor: 'green'}}> {/*content*/}
+                  Content
+                </button>
+                <button type="button" className="moodColor" style={{backgroundColor: 'yellow'}}> {/*happy*/}
+                  Happy
+                </button>
+                <button type="button" className="moodColor" style={{backgroundColor: 'orange'}}> {/*anxious*/}
+                  Anxious
+                </button>
+                <button type="button" className="moodColor" style={{backgroundColor: 'blue', color: 'white'}}>   {/*depressed*/}
+                  Depressed
+                </button>
+                <button type="button" className="moodColor" style={{backgroundColor: 'red'}}>    {/*angry*/}
+                  Angry
+                </button>
+                <button type="button" className="moodColor" style={{backgroundColor: 'black', color: 'white'}}>  {/*suicidal*/}
+                  Suicidal
+                </button>
               </div>
               <div className="modal-footer">
                 <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
