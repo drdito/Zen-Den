@@ -5,6 +5,7 @@ var PORT = process.env.PORT || 3001;
 var bodyParser = require('body-parser');
 var index = require('./routes/index');
 var users = require('./routes/users');
+var path = require('path');
 
 app = express();
 
@@ -16,6 +17,8 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 //Allows us to use local styling from our public/assets folder.
 app.use(express.static('public'));
+
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 app.use('/', index);
 app.use('/users', users);
