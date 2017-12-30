@@ -92,16 +92,6 @@ class Calendar extends React.Component {
           {this.renderSquare(null)}
           {this.renderSquare(null)}
         </div>
-        <div className="calendar-row">
-          {this.renderSquare(null)}
-          {this.renderSquare(null)}
-          {this.renderSquare(null)}
-          {this.renderSquare(null)}
-          {this.renderSquare(null)}
-          {this.renderSquare(null)}
-          {this.renderSquare(null)}
-        </div>
-
       </div>
     )
   }
