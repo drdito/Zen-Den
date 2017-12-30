@@ -1,6 +1,5 @@
 import React from "react";
 import "./dashboard.css";
-import Nav from "../../Nav";
 import Container from "../../Bootstrap/Container";
 import Row from "../../Bootstrap/Row";
 import Col from "../../Bootstrap/Col";
