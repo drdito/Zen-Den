@@ -2,11 +2,30 @@
 // Displays the calendar for users to click on
 
 import React from 'react';
-import Date from '../Date';
+/* import Date from '../Date'; */
 import Day from '../Day';
+import Calendar from 'react-calendar'; //NPM Package: https://www.npmjs.com/package/react-calendar
 
+class reactCalendar extends React.Component {
 
-class Calendar extends React.Component {
+  state = {
+    date: new Date(),
+  }
+ 
+  onChange = date => this.setState({ date }); 
+
+  render() {
+    return (
+      <div>
+        <Calendar
+          onChange={this.onChange}
+          value={this.state.date}
+        />
+      </div>
+    );
+  }
+
+ 
   /* Not sure what's happening with this block yet
   constructor(props) {
     super(props);
@@ -16,6 +35,7 @@ class Calendar extends React.Component {
   }
   */
 
+  /*
   renderSquare(i) {
     return ( 
       // value prop is being passed down to Date component
@@ -95,6 +115,7 @@ class Calendar extends React.Component {
       </div>
     )
   }
+  */
 }
 
 export default Calendar;
