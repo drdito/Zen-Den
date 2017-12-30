@@ -1,4 +1,8 @@
 /* CSS for Mood Tracker component */
+.moods {
+  margin: auto;
+  margin-top: 20px;
+}
 .day {
   background: #fff;
   border: 1px solid #999;
