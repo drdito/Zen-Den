@@ -3,7 +3,6 @@
 var express = require('express')
 var PORT = process.env.PORT || 3001;
 var bodyParser = require('body-parser');
-var index = require('./routes/index');
 var users = require('./routes/users');
 var path = require('path');
 
@@ -20,8 +19,7 @@ app.use(express.static('public'));
 
 app.use(express.static(path.join(__dirname, 'client/build')));
 
-app.use('/', index);
-app.use('/users', users);
+app.use('/api', users);
 
 //Syncing with the database prior to listening on port 3001
 app.listen(process.env.PORT || 3001, function() {

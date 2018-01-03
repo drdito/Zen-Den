@@ -6858,6 +6858,10 @@ write@^0.2.1:
   dependencies:
     mkdirp "^0.5.1"
 
+x-gif@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/x-gif/-/x-gif-1.0.5.tgz#0d6b031570e23d3a7941757312be87bf7fb9ee50"
+
 xdg-basedir@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/xdg-basedir/-/xdg-basedir-2.0.0.tgz#edbc903cc385fc04523d966a335504b5504d1bd2"
