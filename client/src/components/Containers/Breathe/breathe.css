@@ -2,3 +2,24 @@
   margin-top: 3rem;
   height: 60%;
 }
+
+.progress {
+  height: 50px;
+}
+
+#dynamic {
+  width: 0%;
+}
+
+#breathIn {
+ font-weight: normal;
+ text-align: center;
+}
+#breathOut {
+  font-weight: normal;
+  text-align: center;
+}
+
+#startStop {
+  text-align: center;
+}
