@@ -1,10 +1,6 @@
 import React from "react";
 import "./dashboard.css";
 import Container from "../../Bootstrap/Container";
-import Row from "../../Bootstrap/Row";
-import Col from "../../Bootstrap/Col";
-
-import { populateArticles } from "../../../domains/domainResources/actionsResources";
 
 const Dashboard = () => (
   <Container>
