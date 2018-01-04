@@ -1,17 +1,31 @@
 {
   "name": "react-backend",
   "version": "0.0.0",
+  "engines": {
+    "node": "8.9.1"
+  },
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node server",
+    "install": "cd client && yarn build && cd .."
   },
   "dependencies": {
+    "better-react-spinkit": "^2.0.4",
     "body-parser": "~1.18.2",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.9",
     "express": "~4.15.5",
     "jade": "~1.11.0",
     "morgan": "~1.9.0",
-    "serve-favicon": "~2.4.5"
+    "react": "^16.2.0",
+    "react-calendar": "^2.9.0",
+    "react-bootstrap-slider": "^2.1.3",
+    "react-dom": "^16.2.0",
+    "react-google-login": "^3.0.4",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "^1.0.17",
+    "serve-favicon": "~2.4.5",
+    "x-gif": "^1.0.5"
   }
 }
