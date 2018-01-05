@@ -17,18 +17,15 @@ BigCalendar.momentLocalizer(moment); // or globalizeLocalizer
 
 const Calendar = props => (
       <div {...this.props}>
-        <h3 className="callout">
-          Click an event to see more info, or
-          drag the mouse over the calendar to select a date/time range.
-        </h3>
+
         <BigCalendar
           selectable
           events={events}
           views={['month']} /* forces the view to only be month, and takes away the three view buttons on right side of toolbar */
           defaultView='month' /* forces the view to only be month, and takes away the three view buttons on right side of toolbar */
           scrollToTime={new Date(1970, 1, 1, 6)}
-          defaultDate={new Date(2015, 3, 12)}
-          // defaultDate={new Date(2018, 0, 12)}
+          // defaultDate={new Date(2015, 3, 12)}
+          defaultDate={new Date(2018, 0, 12)}
           onSelectEvent={event => alert(event.title)}
           onSelectSlot={(slotInfo) => alert(
             `selected slot: \n\nstart ${slotInfo.start.toLocaleString()} ` +
