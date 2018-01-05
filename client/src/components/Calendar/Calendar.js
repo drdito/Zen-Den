@@ -7,9 +7,9 @@ import Day from '../Day';
 import BigCalendar from 'react-big-calendar'; //NPM Package: https://www.npmjs.com/package/react-big-calendar
 import moment from 'moment';
 import events from './events';
-import '../src/react-big-calendar.css';
+import './react-big-calendar.css';
 
-class BigCalendar extends React.Component {
+// class BigCalendar extends React.Component {
 
 // Setup the localizer by providing the moment (or globalize) Object
 // to the correct localizer.
@@ -130,7 +130,7 @@ const Calendar = props => (
       </div>
     )
   }
-  */
+  
 }
-
+*/
 export default Calendar;
