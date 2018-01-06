@@ -91,8 +91,8 @@ export default [
     'start': new Date(2018, 0, 7, 0, 0, 0),
     'end': new Date(2018, 0, 7, 0, 0, 0)
   },
-  {'title': 'Test Event 2',
-  'start': new Date(2018, 0, 7, 0, 0, 0),
-  'end': new Date(2018, 0, 7, 0, 0, 0)
+  { 'title': 'Test Event 2',
+    'start': new Date(2018, 0, 7, 0, 0, 0),
+    'end': new Date(2018, 0, 7, 0, 0, 0)
   }
 ]
