@@ -17,14 +17,22 @@ BigCalendar.momentLocalizer(moment); // or globalizeLocalizer
 // This is working. 
 const PromptThis = ({ event }) => {
   const userAnswer = prompt(`What are you looking for in life?`);
-  event = {"title": userAnswer};
+  event = {
+    "title": userAnswer,
+    "start": new Date()  
+  };
   console.log(event);
   return event;
 }
 
 // This isn't working.
 const TestModal = ({ event }) => {
-  <MoodPicker />
+  return (
+    <div>
+      <MoodPicker />
+    </div>
+  )
+  
 }
 
 const Calendar = props => (
@@ -39,7 +47,7 @@ const Calendar = props => (
           // defaultDate={new Date(2015, 3, 12)}
           defaultDate={new Date()} // `new Date()` makes the calendar view default to today's date
           onSelectEvent={event => alert(event.title)}
-          onSelectSlot={PromptThis}
+          onSelectSlot={TestModal}
         />
       </div>
     );
