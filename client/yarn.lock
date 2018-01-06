@@ -5246,8 +5246,6 @@ rc@^1.0.1, rc@^1.1.6, rc@^1.1.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-<<<<<<< HEAD
-=======
 react-big-calendar@^0.17.0:
   version "0.17.0"
   resolved "https://registry.yarnpkg.com/react-big-calendar/-/react-big-calendar-0.17.0.tgz#2c3cb0a660bf2ee22610453cbf123a886ffae6f1"
@@ -5263,7 +5261,6 @@ react-big-calendar@^0.17.0:
     uncontrollable "^3.3.1 || ^4.0.0"
     warning "^2.0.0"
 
->>>>>>> laura
 react-bootstrap-slider@^2.1.3:
   version "2.1.3"
   resolved "https://registry.yarnpkg.com/react-bootstrap-slider/-/react-bootstrap-slider-2.1.3.tgz#9445d600a893a0aba4699a8a18755ffccaf75b6c"
@@ -5342,7 +5339,6 @@ react-google-login@^3.0.2:
     "@types/react" "*"
     prop-types "^15.6.0"
 
-react-overlays@^0.7.4:
 react-overlays@^0.7.0, react-overlays@^0.7.4:
   version "0.7.4"
   resolved "https://registry.yarnpkg.com/react-overlays/-/react-overlays-0.7.4.tgz#ef2ec652c3444ab8aa014262b18f662068e56d5c"
@@ -5353,15 +5349,12 @@ react-overlays@^0.7.0, react-overlays@^0.7.4:
     prop-types-extra "^1.0.1"
     warning "^3.0.0"
 
-<<<<<<< HEAD
-=======
 react-prop-types@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/react-prop-types/-/react-prop-types-0.4.0.tgz#f99b0bfb4006929c9af2051e7c1414a5c75b93d0"
   dependencies:
     warning "^3.0.0"
 
->>>>>>> laura
 react-router-dom@^4.2.2:
   version "4.2.2"
   resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-4.2.2.tgz#c8a81df3adc58bba8a76782e946cbd4eae649b8d"
