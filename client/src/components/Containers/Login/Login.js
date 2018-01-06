@@ -1,5 +1,4 @@
 import React from "react";
-import ReactDOM from 'react-dom';
 import "./login.css";
 import Container from '../../Bootstrap/Container';
 import { GoogleLogin } from 'react-google-login';
