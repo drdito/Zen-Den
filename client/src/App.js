@@ -1,22 +1,25 @@
 import React from "react";
 import './App.css';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link, Redirect, Switch } from "react-router-dom";
 import Dashboard from "./components/Containers/Dashboard";
 import Resources from "./components/Containers/Resources";
 import MoodTracker from "./components/Containers/MoodTracker";
 import Breathe from "./components/Containers/Breathe";
 import Blog from "./components/Containers/Blog";
 import Login from "./components/Containers/Login";
+import PrivateRoute from "./components/PrivateRoute";
+
+
 
 const App = () =>
   <Router>
     <div>
       <Switch>
-        <Route exact path="/" component={Dashboard} />
-        <Route exact path="/resources" component={Resources} />
-        <Route exact path="/moodtracker" component={MoodTracker} />
-        <Route exact path="/breathe" component={Breathe} />
-        <Route exact path="/blog" component={Blog} />
+        <PrivateRoute exact path="/" component={Dashboard} />
+        <PrivateRoute exact path="/resources" component={Resources} />
+        <PrivateRoute exact path="/moodtracker" component={MoodTracker} />
+        <PrivateRoute exact path="/breathe" component={Breathe} />
+        <PrivateRoute exact path="/blog" component={Blog} />
         <Route exact path="/login" component={Login} />
       </Switch>
     </div>
