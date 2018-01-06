@@ -4,26 +4,38 @@
 import React from 'react';
 /* import Date from '../Date'; */
 import Day from '../Day';
-import Calendar from 'react-calendar'; //NPM Package: https://www.npmjs.com/package/react-calendar
+import BigCalendar from 'react-big-calendar'; //NPM Package: https://www.npmjs.com/package/react-big-calendar
+import moment from 'moment';
+import events from './events';
+import './react-big-calendar.css';
 
-class reactCalendar extends React.Component {
+// class BigCalendar extends React.Component {
 
-  state = {
-    date: new Date(),
-  }
- 
-  onChange = date => this.setState({ date }); 
+// Setup the localizer by providing the moment (or globalize) Object
+// to the correct localizer.
+BigCalendar.momentLocalizer(moment); // or globalizeLocalizer
 
-  render() {
-    return (
-      <div>
-        <Calendar
-          onChange={this.onChange}
-          value={this.state.date}
+const Calendar = props => (
+      <div {...this.props}>
+
+        <BigCalendar
+          selectable
+          events={events}
+          views={['month']} /* forces the view to only be month, and takes away the three view buttons on right side of toolbar */
+          defaultView='month' /* forces the view to only be month, and takes away the three view buttons on right side of toolbar */
+          scrollToTime={new Date(1970, 1, 1, 6)}
+          // defaultDate={new Date(2015, 3, 12)}
+          defaultDate={new Date(2018, 0, 12)}
+          onSelectEvent={event => alert(event.title)}
+          onSelectSlot={(slotInfo) => alert(
+            `selected slot: \n\nstart ${slotInfo.start.toLocaleString()} ` +
+            `\nend: ${slotInfo.end.toLocaleString()}` +
+            `\naction: ${slotInfo.action}` +
+            `\nMy Test: WHAT UP BITCHES???`
+          )}
         />
       </div>
     );
-  }
 
  
   /* Not sure what's happening with this block yet
@@ -115,7 +127,7 @@ class reactCalendar extends React.Component {
       </div>
     )
   }
-  */
+  
 }
-
+*/
 export default Calendar;
