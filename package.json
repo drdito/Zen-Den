@@ -10,6 +10,7 @@
     "install": "cd client && yarn build && cd .."
   },
   "dependencies": {
+    "axios": "^0.17.1",
     "better-react-spinkit": "^2.0.4",
     "body-parser": "~1.18.2",
     "cookie-parser": "~1.4.3",
