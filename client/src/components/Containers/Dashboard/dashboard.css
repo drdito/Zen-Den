@@ -164,8 +164,9 @@
   font-family: 'Open Sans', Arial, sans-serif;
 }
 
-.ch-info p a:hover {
+.ch-info a:hover {
   color: #706e96;
+  text-decoration: none;
 }
 
 .ch-item:hover {

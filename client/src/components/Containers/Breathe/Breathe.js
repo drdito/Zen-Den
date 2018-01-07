@@ -14,7 +14,7 @@ const animateBar = () => {
   let barFull = false;
   const interval = setInterval(function() {
       if (barFull === false){
-        current_progress += .5;
+        current_progress += 1;
         document.getElementById("breathIn").style.fontWeight = "bolder"
         document.getElementById("breathIn").style.color = "white"
         document.getElementById("breathOut").style.fontWeight = "normal"
@@ -25,7 +25,7 @@ const animateBar = () => {
         }
       }
       else {
-        current_progress -= .5;
+        current_progress -= 1;
         document.getElementById("breathIn").style.fontWeight = "normal"
         document.getElementById("breathIn").style.color = "#706e96"
         document.getElementById("breathOut").style.fontWeight = "bolder"
@@ -36,7 +36,7 @@ const animateBar = () => {
         }
       }
       document.getElementById("dynamic").style.width = current_progress + "%";
-  }, 25);
+  }, 50);
   document.getElementById("stopButton").addEventListener("click", function(){
     clearInterval(interval);
     document.getElementById("stopButton").disabled = true;
@@ -54,7 +54,7 @@ const Breathe = () => (
   <br/>
   <Container>
     <Row>
-      <Col size="lg-4">
+      <Col size="lg-3 offset-lg-1">
         <h2 id="breathIn">Breathe In</h2>
       </Col>
       <Col size="lg-4">
@@ -64,7 +64,7 @@ const Breathe = () => (
           </div>
         </div>
       </Col>
-      <Col size="lg-4">
+      <Col size="lg-3">
           <h2 id="breathOut">Breathe Out</h2>
       </Col>
     </Row>
