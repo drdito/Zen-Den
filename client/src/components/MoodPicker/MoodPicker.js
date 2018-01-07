@@ -1,5 +1,10 @@
 import React from 'react';
 
+const saveMood = () => {
+  alert("You clicked me!");
+};
+
+
 class MoodPicker extends React.Component {
   render () {
     return (
@@ -14,7 +19,7 @@ class MoodPicker extends React.Component {
                 </button>
               </div>
               <div className="modal-body">
-                <button type="button" className="moodColor" style={{backgroundColor: 'green'}}> {/*content*/}
+                <button onClick={saveMood} type="button" className="moodColor" style={{backgroundColor: 'green'}}> {/*content*/}
                   Content
                 </button>
                 <button type="button" className="moodColor" style={{backgroundColor: 'yellow'}}> {/*happy*/}
@@ -35,7 +40,7 @@ class MoodPicker extends React.Component {
               </div>
               <div className="modal-footer">
                 <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" className="btn btn-primary">Save changes</button>
+                <button type="button" className="btn btn-primary" onClick={saveMood}>Save changes</button>
               </div>
             </div>
           </div>

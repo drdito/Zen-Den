@@ -77,3 +77,7 @@
   border: solid 5px rgb(173, 45, 167);
 }
 
+.moodColor:focus {
+  border: solid 5px rgb(173, 45, 167);
+}
+

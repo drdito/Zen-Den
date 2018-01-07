@@ -4,7 +4,6 @@ import React from 'react';
 import Date from '../Date'; 
 import Day from '../Day';
 import NullBox from '../NullBox';
-import MoodPicker from '../MoodPicker';
 
 
 class Calendar extends React.Component {
