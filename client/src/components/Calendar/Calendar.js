@@ -3,6 +3,7 @@
 import React from 'react';
 import Date from '../Date'; 
 import Day from '../Day';
+import NullBox from '../NullBox';
 import MoodPicker from '../MoodPicker';
 
 
@@ -31,6 +32,13 @@ class Calendar extends React.Component {
     ); 
   }
 
+  renderNullBox(i) {
+    return (
+      // value prop is being passed down to NullBox component
+      <NullBox value={i} />
+    );
+  }
+
   render() {
     // Hard coding calendar for January 2018.
     // I need to find a way to generate calendars dynamically
@@ -49,7 +57,7 @@ class Calendar extends React.Component {
           {this.renderDay('S')}
         </div>
         <div className="calendar-row">
-          {this.renderSquare(null)}
+          {this.renderNullBox(null)}
           {this.renderSquare(1)}
           {this.renderSquare(2)}
           {this.renderSquare(3)}
@@ -89,9 +97,9 @@ class Calendar extends React.Component {
           {this.renderSquare(29)}
           {this.renderSquare(30)}
           {this.renderSquare(31)}
-          {this.renderSquare(null)}
-          {this.renderSquare(null)}
-          {this.renderSquare(null)}
+          {this.renderNullBox(null)}
+          {this.renderNullBox(null)}
+          {this.renderNullBox(null)}
         </div>
       </div>
     )
