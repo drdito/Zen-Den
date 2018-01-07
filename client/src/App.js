@@ -10,8 +10,6 @@ import Login from "./components/Containers/Login";
 import PrivateRoute from "./components/PrivateRoute";
 import SignUp from "./components/Containers/Signup";
 
-
-
 const App = () =>
   <Router>
     <div>
