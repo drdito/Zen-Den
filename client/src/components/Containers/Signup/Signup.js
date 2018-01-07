@@ -2,6 +2,10 @@ import React from "react";
 import "./signup.css";
 import Container from '../../Bootstrap/Container';
 import SignUpForm from '../../SignUpForm';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { userSignupRequest } from '../../../domains/domainLogin/actions/signupActions';
+
 
 
 
@@ -15,6 +19,7 @@ class Dashboard extends React.Component {
   }
 
   render() {
+    const { userSignupRequest } = this.props;
     return (
       <Container>
         <header className="masthead">
@@ -23,7 +28,7 @@ class Dashboard extends React.Component {
               <div className="row">
                 <div className="col-lg-12 mx-auto">
                   <h1 className="brand-heading">Zen Den</h1>
-                  <SignUpForm/>
+                  <SignUpForm userSignupRequest={userSignupRequest} />
                 </div>
               </div>
             </div>
@@ -35,4 +40,8 @@ class Dashboard extends React.Component {
   };
 };
 
-export default Dashboard;
+SignUpForm.propTypes = {
+  userSignupRequest: PropTypes.func.isRequired
+};
+
+export default connect(null, { userSignupRequest })(Dashboard);
