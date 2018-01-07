@@ -20,7 +20,7 @@ const animateBar = () => {
   const interval = setInterval(function() {
       if (barFull === false){
 
-        current_progress += .5;
+        current_progress += 1;
         breatheIn.style.fontWeight = "bolder"
         breatheIn.style.color = "white"
         breatheOut.style.fontWeight = "normal"
