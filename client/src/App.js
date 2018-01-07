@@ -8,8 +8,7 @@ import Breathe from "./components/Containers/Breathe";
 import Blog from "./components/Containers/Blog";
 import Login from "./components/Containers/Login";
 import PrivateRoute from "./components/PrivateRoute";
-
-
+import SignUp from "./components/Containers/Signup";
 
 const App = () =>
   <Router>
@@ -21,6 +20,8 @@ const App = () =>
         <PrivateRoute exact path="/breathe" component={Breathe} />
         <PrivateRoute exact path="/blog" component={Blog} />
         <Route exact path="/login" component={Login} />
+        <Route exact path="/signup" component={SignUp} />
+
       </Switch>
     </div>
   </Router>;
