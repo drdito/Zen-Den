@@ -38,12 +38,18 @@ const Resources = () => (
               </div>
             </Col>
             <Col size="lg-6">
-              <div className="card">
-                <div className="card-body">
-                  <h4 className="card-title">Articles by People Like You</h4>
-                  <Article />
-                </div>
-              </div>
+              <div class="card">
+                <img src="img/lungs.jpg" class="w-100"/>
+                  <div class="col-md-8 px-3">
+                    <div class="card-block px-3">
+                      <h4 class="card-title">Benefits of Diaphramatic Breathing</h4>
+                      <ul>
+                        <li>Reduces Stress</li>
+                      </ul>
+                      <a href="#" class="btn btn-primary">Read More</a>
+                    </div>
+                  </div>
+                <div>
             </Col>
             <Col size="lg-3">
               <div className="card">
