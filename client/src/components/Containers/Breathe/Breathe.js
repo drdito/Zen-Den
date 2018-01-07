@@ -7,18 +7,23 @@ import Col from '../../Bootstrap/Col';
 
 
 const animateBar = () => {
-  document.getElementById("startButton").disabled = true;
-  document.getElementById("stopButton").disabled = false;
-  document.getElementById("dynamic").style.visibility = "visible";
+  const breatheIn = document.getElementById("breathIn");
+  const breatheOut = document.getElementById("breathOut");
+  const startButton = document.getElementById("startButton");
+  const stopButton = document.getElementById("stopButton");
+  const dynamic = document.getElementById("dynamic");
+  startButton.disabled = true;
+  stopButton.disabled = false;
+  dynamic.style.visibility = "visible";
   let current_progress = 0;
   let barFull = false;
   const interval = setInterval(function() {
       if (barFull === false){
         current_progress += .5;
-        document.getElementById("breathIn").style.fontWeight = "bolder"
-        document.getElementById("breathIn").style.color = "white"
-        document.getElementById("breathOut").style.fontWeight = "normal"
-        document.getElementById("breathOut").style.color = "#706e96"
+        breatheIn.style.fontWeight = "bolder"
+        breatheOut.style.color = "white"
+        breatheOut.style.fontWeight = "normal"
+        breatheOut.style.color = "#706e96"
 
         if (current_progress === 100) {
           barFull = true;
@@ -26,22 +31,22 @@ const animateBar = () => {
       }
       else {
         current_progress -= .5;
-        document.getElementById("breathIn").style.fontWeight = "normal"
-        document.getElementById("breathIn").style.color = "#706e96"
-        document.getElementById("breathOut").style.fontWeight = "bolder"
-        document.getElementById("breathOut").style.color = "white"
+        breatheIn.style.fontWeight = "normal"
+        breatheIn.style.color = "#706e96"
+        breatheOut.style.fontWeight = "bolder"
+        breatheOut.style.color = "white"
 
         if (current_progress === 0) {
           barFull = false;
         }
       }
-      document.getElementById("dynamic").style.width = current_progress + "%";
+      dynamic.style.width = current_progress + "%";
   }, 25);
-  document.getElementById("stopButton").addEventListener("click", function(){
+  stopButton.addEventListener("click", function(){
     clearInterval(interval);
-    document.getElementById("stopButton").disabled = true;
-    document.getElementById("dynamic").style.visibility = "hidden";
-    document.getElementById("startButton").disabled = false;
+    stopButton.disabled = true;
+    dynamic.style.visibility = "hidden";
+    startButton.disabled = false;
   });
 };
 
