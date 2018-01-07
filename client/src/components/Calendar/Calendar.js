@@ -9,6 +9,7 @@ import moment from 'moment';
 import events from './events';
 import './react-big-calendar.css';
 import MoodPicker from '../MoodPicker';
+import ReactModal from '../ReactModal';
 
 // Setup the localizer by providing the moment (or globalize) Object
 // to the correct localizer.
@@ -47,7 +48,7 @@ const Calendar = props => (
           // defaultDate={new Date(2015, 3, 12)}
           defaultDate={new Date()} // `new Date()` makes the calendar view default to today's date
           onSelectEvent={event => alert(event.title)}
-          onSelectSlot={TestModal}
+          onSelectSlot={ReactModal}
         />
       </div>
     );
