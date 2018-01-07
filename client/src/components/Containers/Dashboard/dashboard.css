@@ -184,11 +184,3 @@
 .ch-item:hover .ch-info p {
   opacity: 1;
 }
-
-.logout{
-  color: #706e96;
-}
-
-.logout:hover {
-  color: white;
-}
