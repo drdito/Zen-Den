@@ -1,10 +1,12 @@
 
 //Bringing in necessary dependencies.
-var express = require('express')
+var express = require('express');
+var mongoose = require('mongoose');
 var PORT = process.env.PORT || 3001;
 var bodyParser = require('body-parser');
 var users = require('./routes/users');
 var path = require('path');
+var blogPosts = require('./routes/api/BlogPosts');
 
 app = express();
 
@@ -18,8 +20,18 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 app.use(express.static('public'));
 
 app.use(express.static(path.join(__dirname, 'client/build')));
+app.use('/', index);
+app.use('/users', users);
+app.use('/api/blog', blogPosts);
 
 app.use('/api', users);
+
+// Set up promises with mongoose
+mongoose.Promise = global.Promise;
+// Connect to the Mongo DB
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://localhost/zenden"
+);
 
 //Syncing with the database prior to listening on port 3001
 app.listen(process.env.PORT || 3001, function() {
