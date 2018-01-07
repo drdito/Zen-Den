@@ -4,11 +4,31 @@
   padding: 20px;
   text-align: center;
   color: white;
-  /* background-color: rgba(4, 46, 48, .7);
-  border: solid 10px rgb(52, 49, 30); */
-  margin: auto;
-  margin-top: 1rem;
 }
+
+.logo {
+  width:100%;
+}
+
+.logout {
+  border-radius: 50%;
+  background-color: #282643;
+  box-shadow: inset 0 0 0 3px #706e96;
+  margin: auto;
+  margin-top: 20px;
+  width: 100px;
+  height: 100px;
+  padding-top: 35px;
+}
+
+.logout a {
+  color: #706e96;
+}
+
+.logout a:hover {
+  color: white;
+}
+
 .brand-heading {
   color: white;
   font-size: 100px;
@@ -59,7 +79,8 @@
   border-radius: 50%;
   position: relative;
   cursor: default;
-  box-shadow: inset 0 0 0 3px #777251,  0 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 0 0 3px #706e96,
+  0 1px 2px rgba(0, 0, 0, 0.1);
   -webkit-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
   -o-transition: all 0.4s ease-in-out;
@@ -68,24 +89,24 @@
 }
 
 .ch-img-1 {
-  background: url(breathe.jpg) no-repeat center;
+  background: url(img/breathe.png) no-repeat center;
 }
 
 .ch-img-2 {
-  background: url(moods.jpg) no-repeat center;
+  background: url(img/moods.png) no-repeat center;
 }
 
 .ch-img-3 {
-  background: url(blog.jpg) no-repeat center;
+  background: url(img/blog.png) no-repeat center;
 }
 
 .ch-img-4 {
-  background: url(resources.jpg) no-repeat center;
+  background: url(img/resources.png) no-repeat center;
 }
 
 .ch-info {
   position: absolute;
-  background : #112013;
+  background : #282643;
   width: inherit;
   height: inherit;
   border-radius: 50%;
@@ -121,7 +142,7 @@
   font-style: italic;
   margin: 0 30px;
   font-size: 15px;
-  border-top: 1px solid #777251;
+  border-top: 1px solid #706e96;
   opacity: 0;
   -webkit-transition: all 1s ease-in-out 0.4s;
   -moz-transition: all 1s ease-in-out 0.4s;
@@ -144,7 +165,7 @@
 }
 
 .ch-info p a:hover {
-  color: #777251;
+  color: #706e96;
 }
 
 .ch-item:hover {
@@ -162,4 +183,12 @@
 
 .ch-item:hover .ch-info p {
   opacity: 1;
+}
+
+.logout{
+  color: #706e96;
+}
+
+.logout:hover {
+  color: white;
 }

@@ -27,11 +27,11 @@ const Calendar = props => (
           // defaultDate={new Date(2015, 3, 12)}
           defaultDate={new Date(2018, 0, 12)}
           onSelectEvent={event => alert(event.title)}
-          onSelectSlot={(slotInfo) => alert(
-            `selected slot: \n\nstart ${slotInfo.start.toLocaleString()} ` +
-            `\nend: ${slotInfo.end.toLocaleString()}` +
-            `\naction: ${slotInfo.action}` +
-            `\nMy Test: WHAT UP BITCHES???`
+      onSelectSlot={(slotInfo) => alert(
+        `selected slot: \n\nstart ${slotInfo.start.toLocaleString()} ` +
+        `\nend: ${slotInfo.end.toLocaleString()}` +
+        `\naction: ${slotInfo.action}` +
+        `\nMy Test: WHAT UP BITCHES???`
           )}
         />
       </div>
