@@ -17,7 +17,7 @@
   width: 300px;
   border-radius: 50%;
   background-color: #706e96;
-  padding-top: 40%;
+  padding-top: 37%;
   background: url(img/breatheBackground.jpg) no-repeat center;
   margin: auto;
 }
@@ -30,13 +30,13 @@
  font-weight: normal;
  text-align: center;
  color: #706e96;
- padding-top: 40%;
+ padding-top: 50%;
 }
 #breathOut {
   font-weight: normal;
   text-align: center;
   color: #706e96;
-  padding-top: 40%;
+  padding-top: 50%;
 }
 
 #startStop {
