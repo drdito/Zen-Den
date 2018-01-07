@@ -19,11 +19,12 @@ const animateBar = () => {
   let barFull = false;
   const interval = setInterval(function() {
       if (barFull === false){
-        current_progress += 1;
-        document.getElementById("breathIn").style.fontWeight = "bolder"
-        document.getElementById("breathIn").style.color = "white"
-        document.getElementById("breathOut").style.fontWeight = "normal"
-        document.getElementById("breathOut").style.color = "#706e96"
+
+        current_progress += .5;
+        breatheIn.style.fontWeight = "bolder"
+        breatheIn.style.color = "white"
+        breatheOut.style.fontWeight = "normal"
+        breatheOut.style.color = "#706e96"
 
         if (current_progress === 100) {
           barFull = true;
