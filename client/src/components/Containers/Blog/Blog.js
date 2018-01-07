@@ -1,18 +1,78 @@
-import React from "react";
+import React, { Component } from "react";
 import Nav from "../../Nav";
 import Container from "../../Bootstrap/Container";
 import Row from "../../Bootstrap/Row";
 import Col from "../../Bootstrap/Col";
+import API from "../../../utils/API";
+import { List, ListItem } from "../../../components/List";
+import Jumbotron from "../../../components/Jumbotron";
 import "./Blog.css";
 
-const Blog = () => (
+class Blog extends Component {
+  state = {
+    books: []
+  };
+
+  componentDidMount() {
+    this.loadBooks();
+  }
+
+  loadBooks = () => {
+    API.getBlogPosts()
+      .then(res => this.setState({ books: res.data }))
+      .catch(err => console.log(err));
+  };
+
+  render() {
+    return (
+      <Container fluid>
+        <Row>
+          {/* <Col size="md-6">
+            <Jumbotron>
+              <h1>What Books Should I Read?</h1>
+            </Jumbotron>
+            <form>
+              <Input name="title" placeholder="Title (required)" />
+              <Input name="author" placeholder="Author (required)" />
+              <TextArea name="synopsis" placeholder="Synopsis (Optional)" />
+              <FormBtn>Submit Book</FormBtn>
+            </form>
+          </Col> */}
+          <Col size="md-6">
+            <Jumbotron>
+              <h1>Books On My List</h1>
+            </Jumbotron>
+            {this.state.books.length ? (
+              <List>
+                {this.state.books.map(book => (
+                  <ListItem key={book._id}>
+                    <a href={"/books/" + book._id}>
+                      <strong>
+                        {book.title} by {book.synopsis}
+                      </strong>
+                    </a>
+                    {/* <DeleteBtn /> */}
+                  </ListItem>
+                ))}
+              </List>
+            ) : (
+              <h3>No Results to Display</h3>
+            )}
+          </Col>
+        </Row>
+      </Container>
+    );
+  }
+}
+
+/* const Blog = () => (
   <div>
     <Row>
       <Col size="lg-12">
         <Nav />
       </Col>
     </Row>
-    {/* <link href="blog.css" rel="stylesheet"/> */}
+    //  <link href="blog.css" rel="stylesheet"/>
     <Container>
       <div className="row justify-content-center">
         <Col size="lg-8">
@@ -100,6 +160,6 @@ const Blog = () => (
 
     </Container>
   </div>
-);
+); */
 
 export default Blog;

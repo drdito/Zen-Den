@@ -2511,34 +2511,36 @@ express@~4.15.5:
   version "4.15.5"
   resolved "https://registry.yarnpkg.com/express/-/express-4.15.5.tgz#670235ca9598890a5ae8170b83db722b842ed927"
   dependencies:
-    accepts "~1.3.3"
+    accepts "~1.3.4"
     array-flatten "1.1.1"
+    body-parser "1.18.2"
     content-disposition "0.5.2"
-    content-type "~1.0.2"
+    content-type "~1.0.4"
     cookie "0.3.1"
     cookie-signature "1.0.6"
     debug "2.6.9"
     depd "~1.1.1"
     encodeurl "~1.0.1"
     escape-html "~1.0.3"
-    etag "~1.8.0"
-    finalhandler "~1.0.6"
+    etag "~1.8.1"
+    finalhandler "1.1.0"
     fresh "0.5.2"
     merge-descriptors "1.0.1"
     methods "~1.1.2"
     on-finished "~2.3.0"
-    parseurl "~1.3.1"
+    parseurl "~1.3.2"
     path-to-regexp "0.1.7"
-    proxy-addr "~1.1.5"
-    qs "6.5.0"
+    proxy-addr "~2.0.2"
+    qs "6.5.1"
     range-parser "~1.2.0"
-    send "0.15.6"
-    serve-static "1.12.6"
-    setprototypeof "1.0.3"
+    safe-buffer "5.1.1"
+    send "0.16.1"
+    serve-static "1.13.1"
+    setprototypeof "1.1.0"
     statuses "~1.3.1"
     type-is "~1.6.15"
-    utils-merge "1.0.0"
-    vary "~1.1.1"
+    utils-merge "1.0.1"
+    vary "~1.1.2"
 
 extend@~3.0.0, extend@~3.0.1:
   version "3.0.1"
@@ -4327,9 +4329,9 @@ mime-types@^2.1.12, mime-types@~2.1.15, mime-types@~2.1.16, mime-types@~2.1.17, 
   dependencies:
     mime-db "~1.30.0"
 
-mime@1.3.4:
-  version "1.3.4"
-  resolved "https://registry.yarnpkg.com/mime/-/mime-1.3.4.tgz#115f9e3b6b3daf2959983cb38f149a2d40eb5d53"
+mime@1.4.1:
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/mime/-/mime-1.4.1.tgz#121f9ebc49e3766f311a76e1fa1c8003c4b03aa6"
 
 mime@1.4.1:
   version "1.4.1"
@@ -4385,6 +4387,39 @@ mkdirp@0.5.1, mkdirp@0.5.x, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdi
   dependencies:
     minimist "0.0.8"
 
+mongodb-core@3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/mongodb-core/-/mongodb-core-3.0.1.tgz#ff6dc36ee96ff596953d80a6840d6731bc92efed"
+  dependencies:
+    bson "~1.0.4"
+    require_optional "^1.0.1"
+
+mongodb@3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/mongodb/-/mongodb-3.0.1.tgz#278ee8006257ec22798594a6259546825d6de1b2"
+  dependencies:
+    mongodb-core "3.0.1"
+
+mongoose-legacy-pluralize@1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/mongoose-legacy-pluralize/-/mongoose-legacy-pluralize-1.0.1.tgz#31ae25db45c30f1448c0f93f52769e903367c701"
+
+mongoose@^5.0.0-rc2:
+  version "5.0.0-rc2"
+  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-5.0.0-rc2.tgz#4072845ff576af086c1ddfed9039c7887df55ef3"
+  dependencies:
+    async "2.1.4"
+    bson "~1.0.4"
+    kareem "2.0.0-rc5"
+    lodash.get "4.4.2"
+    mongodb "3.0.1"
+    mongoose-legacy-pluralize "1.0.1"
+    mpath "0.3.0"
+    mquery "3.0.0-rc0"
+    ms "2.0.0"
+    regexp-clone "0.0.1"
+    sliced "1.0.1"
+
 morgan@~1.9.0:
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/morgan/-/morgan-1.9.0.tgz#d01fa6c65859b76fcf31b3cb53a3821a311d8051"
@@ -4394,6 +4429,19 @@ morgan@~1.9.0:
     depd "~1.1.1"
     on-finished "~2.3.0"
     on-headers "~1.0.1"
+
+mpath@0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/mpath/-/mpath-0.3.0.tgz#7a58f789e9b5fd3c94520634157960f26bd5ef44"
+
+mquery@3.0.0-rc0:
+  version "3.0.0-rc0"
+  resolved "https://registry.yarnpkg.com/mquery/-/mquery-3.0.0-rc0.tgz#05ec656e92f079828bedf4202e60fb8eaacb9f47"
+  dependencies:
+    bluebird "3.5.0"
+    debug "2.6.9"
+    regexp-clone "0.0.1"
+    sliced "0.0.5"
 
 ms@2.0.0:
   version "2.0.0"
@@ -5250,8 +5298,8 @@ proxy-addr@~1.1.5:
   version "1.1.5"
   resolved "https://registry.yarnpkg.com/proxy-addr/-/proxy-addr-1.1.5.tgz#71c0ee3b102de3f202f3b64f608d173fcba1a918"
   dependencies:
-    forwarded "~0.1.0"
-    ipaddr.js "1.4.0"
+    forwarded "~0.1.2"
+    ipaddr.js "1.5.2"
 
 proxy-addr@~2.0.2:
   version "2.0.2"
@@ -5906,7 +5954,7 @@ send@0.15.6:
     etag "~1.8.1"
     fresh "0.5.2"
     http-errors "~1.6.2"
-    mime "1.3.4"
+    mime "1.4.1"
     ms "2.0.0"
     on-finished "~2.3.0"
     range-parser "~1.2.0"
@@ -5959,7 +6007,7 @@ serve-static@1.12.6:
     encodeurl "~1.0.1"
     escape-html "~1.0.3"
     parseurl "~1.3.2"
-    send "0.15.6"
+    send "0.16.1"
 
 serve-static@1.13.1:
   version "1.13.1"
