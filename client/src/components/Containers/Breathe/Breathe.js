@@ -7,9 +7,14 @@ import Col from '../../Bootstrap/Col';
 
 
 const animateBar = () => {
-  document.getElementById("startButton").disabled = true;
-  document.getElementById("stopButton").disabled = false;
-  document.getElementById("dynamic").style.visibility = "visible";
+  const breatheIn = document.getElementById("breathIn");
+  const breatheOut = document.getElementById("breathOut");
+  const startButton = document.getElementById("startButton");
+  const stopButton = document.getElementById("stopButton");
+  const dynamic = document.getElementById("dynamic");
+  startButton.disabled = true;
+  stopButton.disabled = false;
+  dynamic.style.visibility = "visible";
   let current_progress = 0;
   let barFull = false;
   const interval = setInterval(function() {
@@ -38,10 +43,11 @@ const animateBar = () => {
       document.getElementById("dynamic").style.width = current_progress + "%";
   }, 50);
   document.getElementById("stopButton").addEventListener("click", function(){
+
     clearInterval(interval);
-    document.getElementById("stopButton").disabled = true;
-    document.getElementById("dynamic").style.visibility = "hidden";
-    document.getElementById("startButton").disabled = false;
+    stopButton.disabled = true;
+    dynamic.style.visibility = "hidden";
+    startButton.disabled = false;
   });
 };
 
