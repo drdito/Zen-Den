@@ -14,18 +14,22 @@ const animateBar = () => {
   let barFull = false;
   const interval = setInterval(function() {
       if (barFull === false){
-        current_progress += 1;
+        current_progress += .5;
         document.getElementById("breathIn").style.fontWeight = "bolder"
+        document.getElementById("breathIn").style.color = "white"
         document.getElementById("breathOut").style.fontWeight = "normal"
+        document.getElementById("breathOut").style.color = "#706e96"
 
         if (current_progress === 100) {
           barFull = true;
         }
       }
       else {
-        current_progress -= 1;
+        current_progress -= .5;
         document.getElementById("breathIn").style.fontWeight = "normal"
+        document.getElementById("breathIn").style.color = "#706e96"
         document.getElementById("breathOut").style.fontWeight = "bolder"
+        document.getElementById("breathOut").style.color = "white"
 
         if (current_progress === 0) {
           barFull = false;
@@ -52,23 +56,20 @@ const Breathe = () => (
     <Row>
       <Col size="lg-4">
         <h2 id="breathIn">Breathe In</h2>
-        
       </Col>
       <Col size="lg-4">
-        <div className="progress">
-          <div className="progress-bar bg-success" id="dynamic"></div>
+        <div className="progDiv">
+          <div className="progress">
+              <div className="progress-bar progress-bar-custom" id="dynamic"></div>
+          </div>
         </div>
       </Col>
       <Col size="lg-4">
-        
           <h2 id="breathOut">Breathe Out</h2>
-        
       </Col>
     </Row>
     <Row>
-      <Col size="lg-4">
-      </Col>
-      <Col size="lg-4">
+      <Col size="lg-4 offset-lg-4">
         <div id="startStop">
         <button
           type="button"
@@ -85,8 +86,6 @@ const Breathe = () => (
         Stop
         </button>
         </div>
-      </Col>
-      <Col size="lg-4">
       </Col>
     </Row>
   </Container>
