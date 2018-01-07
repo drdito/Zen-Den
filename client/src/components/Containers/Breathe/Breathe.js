@@ -19,9 +19,10 @@ const animateBar = () => {
   let barFull = false;
   const interval = setInterval(function() {
       if (barFull === false){
-        current_progress += .5;
+
+        current_progress += 1;
         breatheIn.style.fontWeight = "bolder"
-        breatheOut.style.color = "white"
+        breatheIn.style.color = "white"
         breatheOut.style.fontWeight = "normal"
         breatheOut.style.color = "#706e96"
 
@@ -30,19 +31,20 @@ const animateBar = () => {
         }
       }
       else {
-        current_progress -= .5;
-        breatheIn.style.fontWeight = "normal"
-        breatheIn.style.color = "#706e96"
-        breatheOut.style.fontWeight = "bolder"
-        breatheOut.style.color = "white"
+        current_progress -= 1;
+        document.getElementById("breathIn").style.fontWeight = "normal"
+        document.getElementById("breathIn").style.color = "#706e96"
+        document.getElementById("breathOut").style.fontWeight = "bolder"
+        document.getElementById("breathOut").style.color = "white"
 
         if (current_progress === 0) {
           barFull = false;
         }
       }
-      dynamic.style.width = current_progress + "%";
-  }, 25);
-  stopButton.addEventListener("click", function(){
+      document.getElementById("dynamic").style.width = current_progress + "%";
+  }, 50);
+  document.getElementById("stopButton").addEventListener("click", function(){
+
     clearInterval(interval);
     stopButton.disabled = true;
     dynamic.style.visibility = "hidden";
@@ -59,7 +61,7 @@ const Breathe = () => (
   <br/>
   <Container>
     <Row>
-      <Col size="lg-4">
+      <Col size="lg-3 offset-lg-1">
         <h2 id="breathIn">Breathe In</h2>
       </Col>
       <Col size="lg-4">
@@ -69,7 +71,7 @@ const Breathe = () => (
           </div>
         </div>
       </Col>
-      <Col size="lg-4">
+      <Col size="lg-3">
           <h2 id="breathOut">Breathe Out</h2>
       </Col>
     </Row>

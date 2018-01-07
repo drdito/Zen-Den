@@ -14,69 +14,7 @@ import Col from '../../Bootstrap/Col';
 const axios = require("axios");
 const cheerio = require("cheerio");
 
-class Resources extends Component {
-
-  componentWillMount() {
-    // First, we grab the body of the html with request
-    axios({
-      url: '/blogs/category/anxiety-schmanxiety/',
-      method: 'get',
-      baseURL: "https://www.healthyplace.com",
-      headers: { 
-        "Access-Control-Allow-Origin": "https://www.healthyplace.com"
-      }
-    }).then(function (response) {
-      // Then, we load that into cheerio and save it to $ for a shorthand selector
-      const $ = cheerio.load(response.data);
-      // Now, we grab every h2 within a class of eb-post-head, and do the following:
-      $(".eb-post-head h2").each(function (i, element) {
-        // Save an empty result object
-        const result = {};
-
-        // Add the text and href of every link, and save them as properties of the result object
-        result.title = $(this)
-          .children("a")
-          .text();
-        result.link = $(this)
-          .children("a")
-          .attr("href");
-
-        console.log(result);
-
-        // // Create a new Article using the `result` object built from scraping
-        // db.Article
-        //   .create(result)
-        //   .then(function (dbArticle) {
-        //     // If we were able to successfully scrape and save an Article, send a message to the client
-        //     res.send("Scrape Complete");
-        //   })
-        //   .catch(function (err) {
-        //     // If an error occurred, send it to the client
-        //     res.json(err);
-        //   });
-      });
-      }).catch(function (error) {
-        if (error.response) {
-          // The request was made and the server responded with a status code
-          // that falls out of the range of 2xx
-          console.log(error.response.data);
-          console.log(error.response.status);
-          console.log(error.response.headers);
-        } else if (error.request) {
-          // The request was made but no response was received
-          // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
-          // http.ClientRequest in node.js
-          console.log(error.request);
-        } else {
-          // Something happened in setting up the request that triggered an Error
-          console.log('Error', error.message);
-        }
-        console.log(error.config);
-      });
-  }
-
-  render() {
-    return (
+const Resources = () => (
       <div>
         <Row>
           <Col size="lg-12">
@@ -88,20 +26,30 @@ class Resources extends Component {
             <Col size="lg-3">
               <div className="card">
                 <div className="card-body">
-                  <h4 className="card-title">You are Not Alone</h4>
-                  <p className="card-text">Anxiety disorders are the most common mental illness in the U.S., affecting 40 million adults in the United States age 18 and older, or 18.1% of the population every year.</p>
-                  <p className="card-text">Anxiety disorders are highly treatable, yet only 36.9% of those suffering receive treatment.</p>
-                  <p className="card-text">It's not uncommon for someone with an anxiety disorder to also suffer from depression or vice versa. Nearly one-half of those diagnosed with depression are also diagnosed with an anxiety disorder.</p>
+                  <a data-toggle="collapse" href="#collapseExample" aria-expanded="false">
+                    <h4 className="card-title">You are Not Alone</h4>
+                  </a>
+                  <div className="collapse" id="collapseExample">
+                    <p className="card-text">Anxiety disorders are the most common mental illness in the U.S., affecting 40 million adults in the United States age 18 and older, or 18.1% of the population every year.</p>
+                    <p className="card-text">Anxiety disorders are highly treatable, yet only 36.9% of those suffering receive treatment.</p>
+                    <p className="card-text">It's not uncommon for someone with an anxiety disorder to also suffer from depression or vice versa. Nearly one-half of those diagnosed with depression are also diagnosed with an anxiety disorder.</p>
+                </div>
                 </div>
               </div>
             </Col>
             <Col size="lg-6">
-              <div className="card">
-                <div className="card-body">
-                  <h4 className="card-title">Articles by People Like You</h4>
-                  <Article />
-                </div>
-              </div>
+              <div class="card">
+                <img src="img/lungs.jpg" class="w-100"/>
+                  <div class="col-md-8 px-3">
+                    <div class="card-block px-3">
+                      <h4 class="card-title">Benefits of Diaphramatic Breathing</h4>
+                      <ul>
+                        <li>Reduces Stress</li>
+                      </ul>
+                      <a href="#" class="btn btn-primary">Read More</a>
+                    </div>
+                  </div>
+                <div>
             </Col>
             <Col size="lg-3">
               <div className="card">
@@ -118,8 +66,6 @@ class Resources extends Component {
           </Row>
         </Container>
       </div>
-    )
-  }
-};
+);
 
 export default Resources;

@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var users = require('./routes/users');
 var path = require('path');
 var blogPosts = require('./routes/api/BlogPosts');
+var userData = require('./routes/api/userData');
 
 app = express();
 
@@ -20,11 +21,10 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 app.use(express.static('public'));
 
 app.use(express.static(path.join(__dirname, 'client/build')));
-app.use('/', index);
-app.use('/users', users);
-app.use('/api/blog', blogPosts);
 
-app.use('/api', users);
+app.use('/api/blog', blogPosts);
+app.use('/api/users', userData);
+
 
 // Set up promises with mongoose
 mongoose.Promise = global.Promise;
