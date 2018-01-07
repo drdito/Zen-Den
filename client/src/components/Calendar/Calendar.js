@@ -1,59 +1,12 @@
 // Calendar Component
 // Displays the calendar for users to click on
-
 import React from 'react';
-// import Date from '../Date'; 
-// import Day from '../Day';
-import BigCalendar from 'react-big-calendar'; //NPM Package: https://www.npmjs.com/package/react-big-calendar
-import moment from 'moment';
-import events from './events';
-import './react-big-calendar.css';
+import Date from '../Date'; 
+import Day from '../Day';
 import MoodPicker from '../MoodPicker';
-import ReactModal from '../ReactModal';
 
-// Setup the localizer by providing the moment (or globalize) Object
-// to the correct localizer.
-BigCalendar.momentLocalizer(moment); // or globalizeLocalizer
 
-// This is working. 
-const PromptThis = ({ event }) => {
-  const userAnswer = prompt(`What are you looking for in life?`);
-  event = {
-    "title": userAnswer,
-    "start": new Date()  
-  };
-  console.log(event);
-  return event;
-}
-
-// This isn't working.
-const TestModal = ({ event }) => {
-  return (
-    <div>
-      <MoodPicker />
-    </div>
-  )
-  
-}
-
-const Calendar = props => (
-      <div {...this.props}>
-
-        <BigCalendar
-          selectable
-          events={events}
-          views={['month']} /* forces the view to only be month, and takes away the three view buttons on right side of toolbar */
-          defaultView='month' /* forces the view to only be month, and takes away the three view buttons on right side of toolbar */
-          scrollToTime={new Date(1970, 1, 1, 6)}
-          // defaultDate={new Date(2015, 3, 12)}
-          defaultDate={new Date()} // `new Date()` makes the calendar view default to today's date
-          onSelectEvent={event => alert(event.title)}
-          onSelectSlot={ReactModal}
-        />
-      </div>
-    );
-
- 
+class Calendar extends React.Component {
   /* Not sure what's happening with this block yet
   constructor(props) {
     super(props);
@@ -63,7 +16,7 @@ const Calendar = props => (
   }
   */
 
-  /*
+  
   renderSquare(i) {
     return ( 
       // value prop is being passed down to Date component
@@ -145,5 +98,5 @@ const Calendar = props => (
   }
   
 }
-*/
+
 export default Calendar;
