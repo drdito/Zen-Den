@@ -21,7 +21,7 @@ const animateBar = () => {
       if (barFull === false){
         current_progress += .5;
         breatheIn.style.fontWeight = "bolder"
-        breatheOut.style.color = "white"
+        breatheIn.style.color = "white"
         breatheOut.style.fontWeight = "normal"
         breatheOut.style.color = "#706e96"
 
