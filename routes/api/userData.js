@@ -15,10 +15,17 @@ router.post('/', (req, res) => {
   })
 });
 
+let login = {
+  loginSuccess: false,
+  passwordIncorrect: false,
+  emailInvalid: false
+};
+
 router.post('/returninguser', (req, res) => {
   const requestedEmail = req.body.emailAddress;
   const password = req.body.password
-  let result = "";
+  
+ 
   db.User.findOne({ 
     'email': requestedEmail 
   })
@@ -26,15 +33,28 @@ router.post('/returninguser', (req, res) => {
     if (users) {
       if (users.password === password) {
         console.log("Username and password match, login success");
+        login.loginSuccess = true;
+        login.passwordIncorrect = false;
+        login.emailInvalid = false;
       }
       else {
-        console.log("Username exists, but password does not match");
+        console.log("Email exists, but password does not match");
+        login.loginSuccess = false;
+        login.passwordIncorrect = true;
+        login.emailInvalid = false;
       }  
     }
     else {
       console.log("User does not exist");
+      login.loginSuccess = false;
+        login.passwordIncorrect = false;
+        login.emailInvalid = true;
     }
   });  
+});
+
+router.get("/returninguser", (req, res) => {
+  res.json(login);
 });
 
 
