@@ -55,6 +55,7 @@ const Resources = () => (
                 </ul> 
                 <a className="externalResource" href="https://blogs.psychcentral.com/coping-depression/2017/04/the-benefits-of-journaling-for-anxiety/" target="_blank">Learn more</a>
               </div>
+
             </div>
           </div>
         </Col>
