@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import "./loginForm.css";
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -30,7 +31,7 @@ class LoginForm extends React.Component {
         <label htmlFor="inputPassword" className="sr-only">Password</label>
         <input name="password" value={this.state.password} onChange={this.onChange.bind(this)} type="password" id="inputPassword" className="form-control" placeholder="Password" required />
 
-        <button className="btn btn-lg btn-primary btn-block" type="submit">Sign In</button>
+        <button className="btn btn-lg btn-primary btn-block signIn" type="submit">Sign In</button>
       </form>
     );
   }
