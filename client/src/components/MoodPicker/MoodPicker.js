@@ -5,6 +5,8 @@ const saveMood = () => {
 };
 
 
+
+
 class MoodPicker extends React.Component {
   render () {
     return (
@@ -19,22 +21,22 @@ class MoodPicker extends React.Component {
                 </button>
               </div>
               <div className="modal-body">
-                <button onClick={saveMood} type="button" className="moodColor" style={{backgroundColor: 'green'}}> {/*content*/}
+                <button onClick={saveMood} type="button" className="moodColor" id="content" style={{backgroundColor: 'green'}}> {/*content*/}
                   Content
                 </button>
-                <button type="button" className="moodColor" style={{backgroundColor: 'yellow'}}> {/*happy*/}
+                <button type="button" className="moodColor" id="happy" style={{backgroundColor: 'yellow'}}> {/*happy*/}
                   Happy
                 </button>
-                <button type="button" className="moodColor" style={{backgroundColor: 'orange'}}> {/*anxious*/}
+                <button type="button" className="moodColor" id="anxious" style={{backgroundColor: 'orange'}}> {/*anxious*/}
                   Anxious
                 </button>
-                <button type="button" className="moodColor" style={{backgroundColor: 'blue', color: 'white'}}>   {/*depressed*/}
+                <button type="button" className="moodColor" id="depressed" style={{backgroundColor: 'blue', color: 'white'}}>   {/*depressed*/}
                   Depressed
                 </button>
-                <button type="button" className="moodColor" style={{backgroundColor: 'red'}}>    {/*angry*/}
+                <button type="button" className="moodColor" id="angry" style={{backgroundColor: 'red'}}>    {/*angry*/}
                   Angry
                 </button>
-                <button type="button" className="moodColor" style={{backgroundColor: 'black', color: 'white'}}>  {/*suicidal*/}
+                <button type="button" className="moodColor" id="suicidal" style={{backgroundColor: 'black', color: 'white'}}>  {/*suicidal*/}
                   Suicidal
                 </button>
               </div>

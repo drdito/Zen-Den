@@ -7,15 +7,6 @@ import NullBox from '../NullBox';
 
 
 class Calendar extends React.Component {
-  /* Not sure what's happening with this block yet
-  constructor(props) {
-    super(props);
-    this.state = {
-      squares: Array(9).fill(null),
-    };
-  }
-  */
-
   
   renderSquare(i) {
     return ( 
