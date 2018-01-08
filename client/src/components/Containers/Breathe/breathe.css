@@ -43,18 +43,16 @@
   text-align: center;
 }
 
-.btn {
+.stopStart {
   border-radius: 50%;
   height: 90px;
   width: 90px;
-}
-
-.btn-secondary {
   margin: 30px;
   background-color: rgb(4, 46, 48);
+  color: white;
 }
 
-.btn-secondary:hover {
+.stopStart:hover {
   background-color: rgb(52, 101, 104);
 }
 

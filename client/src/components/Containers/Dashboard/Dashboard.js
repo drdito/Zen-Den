@@ -21,10 +21,11 @@ const Dashboard = () => (
               </div>
               <div className="col-lg-6 mx-auto header">
             <img className="logo" src="img/ZenDenLogoTrans.png" alt="Zen Den Logo"/>  
-            <div className="logout">
-              <a href="/login"> Log Out </a>
-            </div>
-            
+            <a className="logout" href="/login">
+              <div className="logout">
+               Log Out 
+              </div>
+            </a>
               </div>
               <div className="col-lg-3">
                 <li>
