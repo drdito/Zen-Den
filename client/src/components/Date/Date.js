@@ -1,6 +1,7 @@
 // Date Component. Used in Calendar Component for the mood tracker
 import React from 'react';
 
+/*
 class ButtonSwitch extends React.Component {
   constructor(props) {
     super(props);
@@ -22,9 +23,9 @@ class ButtonSwitch extends React.Component {
     
     let button = null;
     if (isTrue) {
-      button = (<button className="date" onClick={this.handleFalseClick} style={{backgroundColor: 'pink'}}> </button>);
+      button = <button className="date" onClick={this.handleFalseClick} style={{backgroundColor: 'pink'}}></button>;
     } else {
-      button = (<button className="date" onClick={this.handleTrueClick} style={{backgroundColor: 'yellow'}}> </button>);
+      button = <button className="date" onClick={this.handleTrueClick} style={{backgroundColor: 'yellow'}}></button>;
     }
 
     return button;
@@ -32,24 +33,27 @@ class ButtonSwitch extends React.Component {
 
 }
 
+
+
 // Date compontent. Functonal component.
-const Date = (props) => {
+const Date = () => {
   return (
-    <ButtonSwitch>
-      {props.value}
-    </ButtonSwitch>
+    <ButtonSwitch />
+    
   );
 }
+*/
 
-/*
+
 // Date compontent. Functonal component.
 const Date = (props) => {
   return (
-    <button className="date" data-toggle="modal" data-target="#exampleModal">
+    <button className="date" /* data-toggle="modal" data-target="#exampleModal" */>
       {props.value}
     </button>
   );
 }
-*/
+
+
 
 export default Date;

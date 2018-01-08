@@ -4,6 +4,8 @@ import React from 'react';
 import Date from '../Date'; 
 import Day from '../Day';
 import NullBox from '../NullBox';
+import NormalDate from '../NormalDate';
+
 
 
 class Calendar extends React.Component {
@@ -11,9 +13,19 @@ class Calendar extends React.Component {
   renderSquare(i) {
     return ( 
       // value prop is being passed down to Date component
-      <Date value={i} />
+       <Date value={i} />
     ); 
   }
+
+  /*
+  renderNormalDate(i) {
+    return ( 
+      // value prop is being passed down to Date component
+       <Date value={i} />
+    ); 
+  }
+  */
+  
 
   renderDay(i) {
     return ( 
