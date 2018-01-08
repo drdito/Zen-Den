@@ -81,14 +81,14 @@ const Breathe = () => (
         <button
           type="button"
           id="startButton"
-          class="btn btn-secondary btn-lg leftRow"
+          className="stopStart leftRow"
           onClick={animateBar}    >
           Start
         </button>
         <button
           type="button"
           id="stopButton"
-          class="btn btn-secondary btn-lg leftRow"
+          className="leftRow stopStart"
         >
         Stop
         </button>
