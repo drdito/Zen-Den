@@ -4,7 +4,7 @@ import Container from '../../Bootstrap/Container';
 import SignUpForm from '../../SignUpForm';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { userSignupRequest } from '../../../domains/domainLogin/actions/signupActions';
+import { userSignupRequest } from '../../../domains/domainSignUp/actions/signupActions';
 
 
 
@@ -12,10 +12,6 @@ import { userSignupRequest } from '../../../domains/domainLogin/actions/signupAc
 class Dashboard extends React.Component {
   constructor (props, context) {
     super(props, context);
-  }
-
-  responseGoogle (response) {
-    console.log(response);
   }
 
   render() {

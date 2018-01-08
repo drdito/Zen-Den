@@ -49,7 +49,7 @@ const Resources = () => (
                       <a href="#" class="btn btn-primary">Read More</a>
                     </div>
                   </div>
-                <div>
+                </div>
             </Col>
             <Col size="lg-3">
               <div className="card">
@@ -66,6 +66,7 @@ const Resources = () => (
           </Row>
         </Container>
       </div>
+      
 );
 
 export default Resources;
