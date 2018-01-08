@@ -21,12 +21,14 @@
   padding-top: 35px;
 }
 
-.logout a {
+.logout {
   color: #706e96;
 }
 
-.logout a:hover {
+.logout:hover {
   color: white;
+  text-decoration: none;
+  background-color: #706e96;
 }
 
 .brand-heading {
