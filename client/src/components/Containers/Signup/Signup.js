@@ -1,20 +1,21 @@
 import React from "react";
-import "./login.css";
+import "./signup.css";
 import Container from '../../Bootstrap/Container';
-import LoginForm from '../../LoginForm';
-import { Link } from 'react-router-dom';
+import SignUpForm from '../../SignUpForm';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { userLoginRequest } from '../../../domains/domainLogin/actions/loginAction';
+import { userSignupRequest } from '../../../domains/domainSignUp/actions/signupActions';
 
 
-class Login extends React.Component {
+
+
+class Dashboard extends React.Component {
   constructor (props, context) {
     super(props, context);
   }
 
   render() {
-    const { userLoginRequest } = this.props;
+    const { userSignupRequest } = this.props;
     return (
       <Container>
         <header className="masthead">
@@ -23,8 +24,7 @@ class Login extends React.Component {
               <div className="row">
                 <div className="col-lg-12 mx-auto">
                   <h1 className="brand-heading">Zen Den</h1>
-                  <LoginForm userLoginRequest={userLoginRequest}/>   
-                  <Link to="/signup"><button className="btn btn-lg btn-primary btn-block" type="submit">Sign up with Email</button></Link>
+                  <SignUpForm userSignupRequest={userSignupRequest} />
                 </div>
               </div>
             </div>
@@ -36,10 +36,8 @@ class Login extends React.Component {
   };
 };
 
-LoginForm.propTypes = {
-  userLoginRequest: PropTypes.func.isRequired
+SignUpForm.propTypes = {
+  userSignupRequest: PropTypes.func.isRequired
 };
 
-export default connect(null, { userLoginRequest })(Login);
-
-
+export default connect(null, { userSignupRequest })(Dashboard);

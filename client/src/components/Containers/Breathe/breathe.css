@@ -4,7 +4,22 @@
 }
 
 .progress {
+  top: 50%;
   height: 50px;
+  background-color: rgba(4, 46, 48, .04);
+}
+
+.progress-bar-custom {
+  background-color: rgb(4, 46, 48);  
+}
+.progDiv {
+  height: 300px;
+  width: 300px;
+  border-radius: 50%;
+  background-color: #706e96;
+  padding-top: 37%;
+  background: url(img/breatheBackground.jpg) no-repeat center;
+  margin: auto;
 }
 
 #dynamic {
@@ -14,12 +29,30 @@
 #breathIn {
  font-weight: normal;
  text-align: center;
+ color: #706e96;
+ padding-top: 50%;
 }
 #breathOut {
   font-weight: normal;
   text-align: center;
+  color: #706e96;
+  padding-top: 50%;
 }
 
 #startStop {
   text-align: center;
 }
+
+.stopStart {
+  border-radius: 50%;
+  height: 90px;
+  width: 90px;
+  margin: 30px;
+  background-color: rgb(4, 46, 48);
+  color: white;
+}
+
+.stopStart:hover {
+  background-color: rgb(52, 101, 104);
+}
+
