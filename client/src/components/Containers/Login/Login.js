@@ -22,9 +22,9 @@ class Login extends React.Component {
             <div className="container">
               <div className="row">
                 <div className="col-lg-12 mx-auto">
-                  <h1 className="brand-heading">Zen Den</h1>
+                  <img className="loginLogo" src="img/ZenDenLogoTrans.png" alt="Zen Den Logo" />
                   <LoginForm userLoginRequest={userLoginRequest}/>   
-                  <Link to="/signup"><button className="btn btn-lg btn-primary btn-block" type="submit">Sign up with Email</button></Link>
+                  <Link className="signUp" to="/signup"><button className="btn btn-lg btn-primary btn-block signUp" type="submit">Sign up with Email</button></Link>
                 </div>
               </div>
             </div>
