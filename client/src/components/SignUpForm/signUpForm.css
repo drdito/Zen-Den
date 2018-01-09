@@ -1,0 +1,13 @@
+.signUp {
+  background-color: #282643;
+  box-shadow: inset 0 0 0 3px #706e96;
+  color: #706e96;
+  border: none;
+}
+
+.signUp:hover {
+  background-color: #706e96;
+  color: white;
+  text-decoration: none;
+}
+
