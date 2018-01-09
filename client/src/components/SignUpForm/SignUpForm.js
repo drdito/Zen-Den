@@ -25,7 +25,7 @@ class SignUpForm extends React.Component {
   render() {
     return (
       <form className="form-signin" onSubmit={this.onSubmit.bind(this)}>
-        <h2 className="form-signin-heading">Please Join our Community!</h2>
+        <h2 className="form-signin-heading" id="plsJoin">Please Join our Community!</h2>
         
         <label htmlFor="inputEmail" className="sr-only">Email address</label>
         <input name="emailAddress" value={this.state.emailAddress} onChange={this.onChange.bind(this)} type="email" id="inputEmail" className="form-control" placeholder="Email address" required autoFocus />
