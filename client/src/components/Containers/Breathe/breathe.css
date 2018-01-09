@@ -31,16 +31,22 @@
  text-align: center;
  color: #706e96;
  padding-top: 50%;
+ font-family: 'Lora',
+ serif;
 }
 #breathOut {
   font-weight: normal;
   text-align: center;
   color: #706e96;
   padding-top: 50%;
+  font-family: 'Lora',
+  serif;
 }
 
 #startStop {
   text-align: center;
+  font-family: 'Lora',
+  serif;
 }
 
 .stopStart {
