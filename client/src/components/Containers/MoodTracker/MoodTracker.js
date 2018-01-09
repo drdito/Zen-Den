@@ -17,7 +17,7 @@ const MoodTracker = () => (
     <Container>
       <div>
         <Calendar />
-        <MoodPicker />
+        
       </div>
     </Container> 
   </div>

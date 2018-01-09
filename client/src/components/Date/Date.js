@@ -6,9 +6,11 @@ import MoodPicker from '../MoodPicker';
 class ButtonSwitch extends React.Component {
   constructor(props) {
     super(props);
-    this.handleTrueClick = this.handleTrueClick.bind(this);
-    this.handleFalseClick = this.handleFalseClick.bind(this);
-    this.state = {isTrue: true};
+    // this.handleTrueClick = this.handleTrueClick.bind(this);
+    // this.handleFalseClick = this.handleFalseClick.bind(this);
+    // this.state = {isTrue: true};
+    this.toggleModal = this.toggleModal.bind(this);
+    this.state = {isOpen: false};
     
   }
 
@@ -21,6 +23,12 @@ class ButtonSwitch extends React.Component {
   /* Original 'false' state function. Not being used at the moment. */
   handleFalseClick() {
     this.setState({isTrue: false});
+  }
+
+  toggleModal = () => {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
   }
 
   render() {
@@ -49,8 +57,11 @@ class ButtonSwitch extends React.Component {
 
     return (
       <div>
-        <button className="date" onClick={this.handleTrueClick} style={Styles.buttonStyle}>{this.props.value}</button>
-        <MoodPicker style={Styles.modalStyle} /> {/*This part isn't working yet. We will have to fire the modal using the React way*/}
+        <button className="date" onClick={this.toggleModal}>{this.props.value}</button>
+
+        <MoodPicker show={this.state.isOpen} onClose={this.toggleModal}>
+          `Here's some content for the modal`
+        </MoodPicker>
       </div>
     );
   }
