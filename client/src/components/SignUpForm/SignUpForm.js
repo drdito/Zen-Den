@@ -42,9 +42,11 @@ class SignUpForm extends React.Component {
         <input name="firstName" value={this.state.firstName} onChange={this.onChange.bind(this)} type="text" id="firstName" className="form-control" placeholder="First Name" required />
         
         <label htmlFor="lastName" className="sr-only">Last Name</label>
-        <input name="lastName" value={this.state.lastName} onChange={this.onChange.bind(this)} type="text" id="inputPassword" className="form-control" placeholder="Last Name" required />
+        <input name="lastName" value={this.state.lastName} onChange={this.onChange.bind(this)} type="text" id="inputPassword" className="form-control last" placeholder="Last Name" required />
         
-        <button className="btn btn-lg btn-primary btn-block" type="submit">Sign Up!</button>
+        <br />
+        
+        <button className="btn btn-lg btn-primary btn-block signUp" type="submit">Sign Up!</button>
       </form>
     );
   }
