@@ -21,7 +21,7 @@ class MoodPicker extends React.Component {
                 </button>
               </div>
               <div className="modal-body">
-                <button onClick={saveMood} type="button" className="moodColor" id="content" style={{backgroundColor: 'green'}}> {/*content*/}
+                <button /*onClick={saveMood}*/ type="button" className="moodColor" id="content" style={{backgroundColor: 'green'}}> {/*content*/}
                   Content
                 </button>
                 <button type="button" className="moodColor" id="happy" style={{backgroundColor: 'yellow'}}> {/*happy*/}
