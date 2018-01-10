@@ -12,7 +12,7 @@ const Dashboard = () => (
                   <div className="ch-item ch-img-1">
                     <div className="ch-info">
                       <a href="/breathe">
-                        <h3>Breathe</h3>
+                        <h3 className="bubbleHead">Breathe</h3>
                         <p>Calm your body and mind with some deep breathing</p>
                       </a>
                     </div>

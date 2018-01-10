@@ -44,7 +44,8 @@
   background-size: cover;
   margin: auto;
   margin-top: 7rem;
-  /* border-radius: 50%; */
+  font-family: 'Lora',
+  serif;
 }
 
 .masthead .intro-body {
@@ -67,6 +68,7 @@
   color: #706e96;
   border: none;
 }
+
 .signUp:hover {
   background-color: #706e96;
   color: white;

@@ -23,7 +23,7 @@ class Dashboard extends React.Component {
             <div className="container">
               <div className="row">
                 <div className="col-lg-12 mx-auto">
-                  <h1 className="brand-heading">Zen Den</h1>
+                  <img className="loginLogo" src="img/ZenDenLogoTrans.png" alt="Zen Den Logo" />
                   <SignUpForm userSignupRequest={userSignupRequest} />
                 </div>
               </div>
