@@ -79,7 +79,7 @@ const Date = (props) => {
   console.log(props.value);
 
   return (
-    <ButtonSwitch value={props.value} buttonsInstance/>
+    <ButtonSwitch value={props.value} />
   );
 }
 
