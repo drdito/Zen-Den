@@ -17,7 +17,6 @@ const MoodTracker = () => (
     <Container>
       <div>
         <Calendar />
-        
       </div>
     </Container> 
   </div>
