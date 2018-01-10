@@ -5,7 +5,6 @@ import Nav from '../../Nav';
 import Container from '../../Bootstrap/Container';
 import Row from '../../Bootstrap/Row';
 import Col from '../../Bootstrap/Col';
-import MoodPicker from '../../MoodPicker';
 
 const MoodTracker = () => (
   <div>

@@ -10,7 +10,6 @@ class ButtonSwitch extends React.Component {
     this.handleAnxiousClick = this.handleAnxiousClick.bind(this);
     this.handleDepressedClick = this.handleDepressedClick.bind(this);
     this.handleAngryClick = this.handleAngryClick.bind(this);
-    this.handleSuicidalClick = this.handleSuicidalClick.bind(this);
     this.state = {buttonValue: 0};
   }
 
@@ -44,45 +43,33 @@ class ButtonSwitch extends React.Component {
     this.setState({buttonValue: 5});
   }
 
-  handleSuicidalClick() {
-    console.log("FUNCTION SUICIDAL FIRE");
-    this.setState({buttonValue: 6});
-  }
-
   render() {
     const buttonValue = this.state.buttonValue;
     console.log(this.state);
     
     let button = null;
-    // no mood entered = default white
-    if (buttonValue === 0) {
-      button = <button className="date" onClick={this.handleContentClick}>{this.props.value}</button>;
-    } 
-    // content mood = green
-    else if (buttonValue === 1) {
-      button = <button className="date" onClick={this.handleHappyClick} style={{backgroundColor: 'green', color: 'white'}}>{this.props.value}</button>;
+    switch (buttonValue) {
+      case 0: // no mood entered = default white; style comes from .date class on MoodTracker/moodTracker.css
+        button = <button className="date" onClick={this.handleContentClick}>{this.props.value}</button>;
+        break;
+      case 1: // content mood = dusty rose
+        button = <button className="date" onClick={this.handleHappyClick} style={{backgroundColor: '#E59ABE'}}>{this.props.value}</button>;
+        break;
+      case 2: // happy mood = goldenrod yellow
+        button = <button className="date" onClick={this.handleAnxiousClick} style={{backgroundColor: '#F7CB1B'}}>{this.props.value}</button>;
+        break;      
+      case 3: // anxious mood = lime green
+        button = <button className="date" onClick={this.handleDepressedClick} style={{backgroundColor: '#42FF33'}}>{this.props.value}</button>;
+        break;
+      case 4: // depressed mood = grey blue
+        button = <button className="date" onClick={this.handleAngryClick} style={{backgroundColor: '#515CAA', color: 'white'}}>{this.props.value}</button>;
+        break;
+      case 5: // angry mood = brick red
+        button = <button className="date" onClick={this.handleEmptyClick} style={{backgroundColor: '#C30808', color: 'white'}}>{this.props.value}</button>;
+        break;
+      default:
+        // do nothing
     }
-    // happy mood = yellow
-    else if (buttonValue === 2) {
-      button = <button className="date" onClick={this.handleAnxiousClick} style={{backgroundColor: 'yellow'}}>{this.props.value}</button>;;
-    }
-    // anxious mood = orange
-    else if (buttonValue === 3) {
-      button = <button className="date" onClick={this.handleDepressedClick} style={{backgroundColor: 'orange'}}>{this.props.value}</button>;;
-    }
-    // depressed mood = blue
-    else if (buttonValue === 4) {
-      button = <button className="date" onClick={this.handleAngryClick} style={{backgroundColor: 'blue', color: 'white'}}>{this.props.value}</button>;;
-    }
-    // angry mood = red
-    else if (buttonValue === 5) {
-      button = <button className="date" onClick={this.handleSuicidalClick} style={{backgroundColor: 'red', color: 'white'}}>{this.props.value}</button>;;
-    }
-    // suicidal mood = black
-    else if (buttonValue === 6) {
-      button = <button className="date" onClick={this.handleEmptyClick} style={{backgroundColor: 'black', color: 'white'}}>{this.props.value}</button>;;
-    }
-
     return button;
   }
 }
