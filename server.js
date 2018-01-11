@@ -1,4 +1,3 @@
-
 //Bringing in necessary dependencies.
 var express = require('express');
 var mongoose = require('mongoose');
@@ -25,7 +24,29 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 
 // middleware
 
+var middleware = function (req, res, next) {
+  var accessToken = req.get("Authorization");
+  db.User 
+  .findOne ({
+    accessToken
+  })
+  .then(function(userData) {
+    if (userData) {
+      req.user = userData;
+      next();
+    }
+    else {
+      res.status(401).send ("Unauthorized")
+    } 
+  })
+}
 
+var router = express.Router();
+
+router.get('/', function(req, res) {
+  res.send ("We did it!");
+});
+app.use('/test', middleware, router);
 app.use('/api/blog', blogPosts);
 app.use('/api/users', userData);
 
