@@ -5,6 +5,7 @@ import Nav from '../../Nav';
 import Container from '../../Bootstrap/Container';
 import Row from '../../Bootstrap/Row';
 import Col from '../../Bootstrap/Col';
+import MoodTrackerKey from '../../MoodTrackerKey';
 
 const MoodTracker = () => (
   <div>
@@ -14,9 +15,15 @@ const MoodTracker = () => (
       </Col>
     </Row>
     <Container>
-      <div>
-        <Calendar />
-      </div>
+      <Row>
+        <div>
+          <Calendar />
+        </div>
+        <Col size="lg-1"/>
+        <div>
+          <MoodTrackerKey />
+        </div>
+      </Row>
     </Container> 
   </div>
 );
