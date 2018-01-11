@@ -11,7 +11,7 @@ const Nav = () => (
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav mr-auto">
         <li className="nav-item">
-          <a className="nav-link" href="/">Home</a>
+          <a className="nav-link" href="/dashboard">Home</a>
         </li>
         <li className="nav-item">
           <a className="nav-link" href="/breathe">Breathe</a>
@@ -26,7 +26,7 @@ const Nav = () => (
           <a className="nav-link" href="/resources">Resources</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="/login">Log Out</a>
+          <a className="nav-link" href="/">Log Out</a>
         </li>
       </ul>
     </div>
