@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import "./loginForm.css";
+import { Link } from 'react-router-dom';
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -31,8 +32,7 @@ class LoginForm extends React.Component {
       console.log(data);
       sessionStorage.setItem("accessToken", data.accessToken);
       const activeAccessToken = sessionStorage.getItem("accessToken");
-    })
-    .post('/auth', )
+    });
   }
 
   render() {
@@ -46,7 +46,7 @@ class LoginForm extends React.Component {
         <label htmlFor="inputPassword" className="sr-only">Password</label>
         <input name="password" value={this.state.password} onChange={this.onChange.bind(this)} type="password" id="inputPassword" className="form-control" placeholder="Password" required />
 
-        <button className="btn btn-lg btn-primary btn-block signIn" type="submit">Sign In</button>
+        <Link to="/dashboard"><button className="btn btn-lg btn-primary btn-block signIn" type="submit">Sign In</button></Link>
       </form>
     );
   }
