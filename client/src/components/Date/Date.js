@@ -10,6 +10,8 @@ class ButtonSwitch extends React.Component {
     this.handleAnxiousClick = this.handleAnxiousClick.bind(this);
     this.handleDepressedClick = this.handleDepressedClick.bind(this);
     this.handleAngryClick = this.handleAngryClick.bind(this);
+    
+    // the state will either be set to the last key in local storage, or it will default to {buttonValue: 0}
     this.state = JSON.parse(localStorage.getItem('key')) || {buttonValue: 0};
 
     // setting the local storage
