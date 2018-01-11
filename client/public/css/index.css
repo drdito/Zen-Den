@@ -5,3 +5,12 @@ body {
   background-attachment: fixed;
   font-family: 'Lora', serif;
 }
+
+#root {
+  font-family: 'Lora',
+  serif;
+}
+
+#bootstrapOverride {
+  font-family: 'Lora', serif !important;
+}
