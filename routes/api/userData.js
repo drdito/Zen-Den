@@ -1,29 +1,48 @@
 var mongoose = require("mongoose");
 const router = require("express").Router();
 const userDataController = require("../../controllers/userDataController");
+var crypto = require("crypto-js");
+var hmacSHA256 = require("crypto-js/hmac-sha256");
 const db = require("../../models");
 
 //Hits http://server/api/users
 router.get('/', userDataController.findAll);
 
 router.post('/', (req, res) => {
+  const emailAddress = req.body.emailAddress;
+  const password = req.body.password;
+  const firstName = req.body.firstName;
+  const lastName = req.body.lastName;
+
+  const hmacHash = hmacSHA256(password, 'secret');
+  const hash = crypto.enc.Base64.stringify(hmacHash);
+  
+  const preAccessToken = emailAddress + password;
+  const hmacHashAccessToken = hmacSHA256(preAccessToken, 'secret');
+  const accessToken = crypto.enc.Base64.stringify(hmacHashAccessToken);
+
   db.User.create({
-    email: req.body.emailAddress,
-    password: req.body.password,
+    email: emailAddress,
+    hash: hash,
     firstName: req.body.firstName,
-    lastName: req.body.lastName
+    lastName: req.body.lastName,
+    accessToken: accessToken
   })
 });
 
 let login = {
-  loginSuccess: false,
-  passwordIncorrect: false,
-  emailInvalid: false
+  firstName: '',
+  lastName: '',
+  accessToken: ''
 };
 
 router.post('/returninguser', (req, res) => {
   const requestedEmail = req.body.emailAddress;
-  const password = req.body.password
+  const userPassword = req.body.password
+  
+  const hmacHash = hmacSHA256(userPassword, 'secret');
+  const serverHash = crypto.enc.Base64.stringify(hmacHash);
+  console.log(serverHash);
   
  
   db.User.findOne({ 
@@ -31,24 +50,24 @@ router.post('/returninguser', (req, res) => {
   })
   .then (function(users) {
     if (users) {
-      if (users.password === password) {
+      if (users.hash === serverHash) {
         console.log("Username and password match, login success");
-        login.loginSuccess = true;
-        login.passwordIncorrect = false;
-        login.emailInvalid = false;
+        login.firstName = users.firstName;
+        login.lastName = users.lastName;
+        login.accessToken= users.accessToken;
       }
       else {
         console.log("Email exists, but password does not match");
-        login.loginSuccess = false;
-        login.passwordIncorrect = true;
-        login.emailInvalid = false;
+        login.firstName = '';
+        login.lastName = '';
+        login.accessToken= '';
       }  
     }
     else {
       console.log("User does not exist");
-      login.loginSuccess = false;
-        login.passwordIncorrect = false;
-        login.emailInvalid = true;
+      login.firstName = '';
+      login.lastName = '';
+      login.accessToken= '';
     }
   });  
 });

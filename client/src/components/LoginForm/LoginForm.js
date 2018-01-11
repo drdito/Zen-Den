@@ -11,6 +11,11 @@ class LoginForm extends React.Component {
     }
   }
 
+   
+
+      
+  
+
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
   }
@@ -18,6 +23,16 @@ class LoginForm extends React.Component {
   onSubmit(e) {
     e.preventDefault();
     this.props.userLoginRequest(this.state);
+    fetch('/api/users/returninguser')
+    .then(res => {
+      return res.json();
+    })
+    .then(data => {
+      console.log(data);
+      sessionStorage.setItem("accessToken", data.accessToken);
+      const activeAccessToken = sessionStorage.getItem("accessToken");
+    })
+    .post('/auth', )
   }
 
   render() {
