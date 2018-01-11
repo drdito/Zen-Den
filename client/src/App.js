@@ -14,12 +14,12 @@ const App = () =>
   <Router>
     <div>
       <Switch>
-        <PrivateRoute exact path="/" component={Dashboard} />
+        <PrivateRoute exact path="/dashboard" component={Dashboard} />
         <PrivateRoute exact path="/resources" component={Resources} />
         <PrivateRoute exact path="/moodtracker" component={MoodTracker} />
         <PrivateRoute exact path="/breathe" component={Breathe} />
         <PrivateRoute exact path="/blog" component={Blog} />
-        <Route exact path="/login" component={Login} />
+        <Route exact path="/" component={Login} />
         <Route exact path="/signup" component={SignUp} />
 
       </Switch>

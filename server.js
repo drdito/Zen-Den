@@ -8,6 +8,7 @@ var users = require('./routes/users');
 var path = require('path');
 var blogPosts = require('./routes/api/BlogPosts');
 var userData = require('./routes/api/userData');
+const db = require("./models");
 
 app = express();
 
@@ -21,6 +22,9 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 app.use(express.static('public'));
 
 app.use(express.static(path.join(__dirname, 'client/build')));
+
+// middleware
+
 
 app.use('/api/blog', blogPosts);
 app.use('/api/users', userData);
