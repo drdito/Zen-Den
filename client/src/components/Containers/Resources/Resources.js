@@ -68,7 +68,6 @@ const Resources = () => (
                 <span class="oi oi-ellipses" />
               </a>
               <div className="collapse" id="collapseBlog">
-                <h6 className="card-title">The Calming Response (Parasympathetic Response)</h6>
                 <p>To work with our thoughts and make them more adaptive and realistic, we first need to know what they are. We can't allow our self-talk to remain background music, affecting us without knowing it.</p>
                 <p>One of the most useful things you can do to combat stress and anxiety is keep a running record of your thoughts on paper. There's simply no better way to learn about your thought processes than to write them down.</p>
                 <a className="externalResource" href="https://www.urmc.rochester.edu/encyclopedia/content.aspx?ContentID=4552&ContentTypeID=1" target="_blank">Learn more</a>
@@ -95,12 +94,6 @@ const Resources = () => (
                 <Col size="lg-3">
                   <a className="card-text" href="https://anxietydepressionassoc.site-ym.com/?page=FATMain" target="_blank" rel="noopener noreferrer"><img src="img/therapist.png" class="rounded" alt="Therapist" /></a>
                 </Col> 
-                {/* <Col size="lg-2">
-                </Col> 
-                <Col size="lg-2">
-                </Col>         
-              <a className="card-text" href="https://www.nami.org/" target="_blank" rel="noopener noreferrer">National Alliance on Mental Illness</a>
-              <a className="card-text" href="https://www.psychologytoday.com/" target="_blank" rel="noopener noreferrer">Psychology Today</a> */}
               </Row>
             </div>
           </div>

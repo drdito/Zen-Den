@@ -1,55 +1,64 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const saveMood = () => {
   alert("You clicked me!");
 };
 
 
-
-
 class MoodPicker extends React.Component {
-  render () {
+  render() {
+    // Render nothing if the "show" prop is false
+    if(!this.props.show) {
+      return null;
+    }
+
+    // The gray background
+    const backdropStyle = {
+      position: 'fixed',
+      top: 0,
+      bottom: 0,
+      left: 0,
+      right: 0,
+      backgroundColor: 'rgba(0,0,0,0.3)',
+      padding: 50,
+    };
+
+    // The modal "window"
+    const modalStyle = {
+      position: 'absolute',
+      backgroundColor: '#fff',
+      borderRadius: 5,
+      minWidth: 500,
+      minHeight: 300,
+      margin: '0 auto',
+      padding: 30,
+    };
+
     return (
-      <div>
-        <div className="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div className="modal-dialog modal-lg" role="document">
-            <div className="modal-content">
-              <div className="modal-header">
-                <h5 className="modal-title" id="exampleModalLabel">What was your mood today?</h5>
-                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div className="modal-body">
-                <button onClick={saveMood} type="button" className="moodColor" id="content" style={{backgroundColor: 'green'}}> {/*content*/}
-                  Content
-                </button>
-                <button type="button" className="moodColor" id="happy" style={{backgroundColor: 'yellow'}}> {/*happy*/}
-                  Happy
-                </button>
-                <button type="button" className="moodColor" id="anxious" style={{backgroundColor: 'orange'}}> {/*anxious*/}
-                  Anxious
-                </button>
-                <button type="button" className="moodColor" id="depressed" style={{backgroundColor: 'blue', color: 'white'}}>   {/*depressed*/}
-                  Depressed
-                </button>
-                <button type="button" className="moodColor" id="angry" style={{backgroundColor: 'red'}}>    {/*angry*/}
-                  Angry
-                </button>
-                <button type="button" className="moodColor" id="suicidal" style={{backgroundColor: 'black', color: 'white'}}>  {/*suicidal*/}
-                  Suicidal
-                </button>
-              </div>
-              <div className="modal-footer">
-                <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" className="btn btn-primary" onClick={saveMood}>Save changes</button>
-              </div>
-            </div>
+      <div className="backdrop" style={backdropStyle}>
+        <div className="newModal" style={modalStyle}>
+          {this.props.children}
+
+          <div className="footer">
+            <button onClick={this.props.onClose}>
+              Close
+            </button>
           </div>
         </div>
       </div>
-    )
+    );
   }
 }
+
+MoodPicker.propTypes = {
+  onClose: PropTypes.func.isRequired,
+  show: PropTypes.bool,
+  children: PropTypes.node
+};
+
+
+
+
 
 export default MoodPicker;
