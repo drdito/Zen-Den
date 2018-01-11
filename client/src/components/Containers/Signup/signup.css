@@ -1,6 +1,8 @@
 .form-signin {
     padding: 15px;
     margin: 0 auto;
+    font-family: 'Lora',
+    serif;
   }
   .form-signin .form-signin-heading,
   .form-signin .checkbox {
@@ -29,6 +31,10 @@
     margin-bottom: 10px;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
+  }
+
+  .loginLogo {
+    max-width: 500px;
   }
   
   .masthead {

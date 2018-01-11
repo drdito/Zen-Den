@@ -12,7 +12,7 @@ const Dashboard = () => (
                   <div className="ch-item ch-img-1">
                     <div className="ch-info">
                       <a href="/breathe">
-                        <h3>Breathe</h3>
+                        <h3 className="bubbleHead">Breathe</h3>
                         <p>Calm your body and mind with some deep breathing</p>
                       </a>
                     </div>
@@ -21,10 +21,11 @@ const Dashboard = () => (
               </div>
               <div className="col-lg-6 mx-auto header">
             <img className="logo" src="img/ZenDenLogoTrans.png" alt="Zen Den Logo"/>  
-            <div className="logout">
-              <a href="/login"> Log Out </a>
-            </div>
-            
+            <a className="logout" href="/login">
+              <div className="logout">
+               Log Out 
+              </div>
+            </a>
               </div>
               <div className="col-lg-3">
                 <li>

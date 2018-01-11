@@ -31,29 +31,34 @@
  text-align: center;
  color: #706e96;
  padding-top: 50%;
+ font-family: 'Lora',
+ serif;
 }
 #breathOut {
   font-weight: normal;
   text-align: center;
   color: #706e96;
   padding-top: 50%;
+  font-family: 'Lora',
+  serif;
 }
 
 #startStop {
   text-align: center;
+  font-family: 'Lora',
+  serif;
 }
-  .btn {
+
+.stopStart {
   border-radius: 50%;
   height: 90px;
   width: 90px;
-}
-
-.btn-secondary {
   margin: 30px;
   background-color: rgb(4, 46, 48);
+  color: white;
 }
 
-.btn-secondary:hover {
+.stopStart:hover {
   background-color: rgb(52, 101, 104);
 }
 

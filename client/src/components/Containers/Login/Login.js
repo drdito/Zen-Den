@@ -1,19 +1,20 @@
 import React from "react";
 import "./login.css";
 import Container from '../../Bootstrap/Container';
-import { GoogleLogin } from 'react-google-login';
+import LoginForm from '../../LoginForm';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import { userLoginRequest } from '../../../domains/domainLogin/actions/loginAction';
 
 
-class Dashboard extends React.Component {
+class Login extends React.Component {
   constructor (props, context) {
     super(props, context);
   }
 
-  responseGoogle (response) {
-    console.log(response);
-  }
-
   render() {
+    const { userLoginRequest } = this.props;
     return (
       <Container>
         <header className="masthead">
@@ -21,27 +22,9 @@ class Dashboard extends React.Component {
             <div className="container">
               <div className="row">
                 <div className="col-lg-12 mx-auto">
-                  <h1 className="brand-heading">Zen Den</h1>
-                  <form className="form-signin">
-                    <h2 className="form-signin-heading">Please sign in</h2>
-                    <label htmlFor="inputEmail" className="sr-only">Email address</label>
-                    <input type="email" id="inputEmail" className="form-control" placeholder="Email address" required autoFocus />
-                    <label htmlFor="inputPassword" className="sr-only">Password</label>
-                    <input type="password" id="inputPassword" className="form-control" placeholder="Password" required />
-                    <div className="checkbox">
-                      <label>
-                        <input type="checkbox" value="remember-me" /> Remember me
-                      </label>
-                    </div>
-                    <button className="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-
-                    <GoogleLogin
-                      clientId="707165368984-qv0h5ui2janpaedbeu9ojomivq2hc02s.apps.googleusercontent.com"
-                      buttonText="Login with Google"
-                      onSuccess={this.responseGoogle}
-                      onFailure={this.responseGoogle}
-                    /> 
-                  </form>
+                  <img className="loginLogo" src="img/ZenDenLogoTrans.png" alt="Zen Den Logo" />
+                  <LoginForm userLoginRequest={userLoginRequest}/>   
+                  <Link className="signUp" to="/signup"><button className="btn btn-lg btn-primary btn-block signUp" type="submit">Sign up with Email</button></Link>
                 </div>
               </div>
             </div>
@@ -53,4 +36,10 @@ class Dashboard extends React.Component {
   };
 };
 
-export default Dashboard;
+LoginForm.propTypes = {
+  userLoginRequest: PropTypes.func.isRequired
+};
+
+export default connect(null, { userLoginRequest })(Login);
+
+
