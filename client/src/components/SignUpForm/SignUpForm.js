@@ -20,7 +20,7 @@ class SignUpForm extends React.Component {
   onSubmit(e) {
     e.preventDefault();
     this.props.userSignupRequest(this.state);
-    window.location = '/dashboard';
+    window.location = '/';
   }
 
   render() {
