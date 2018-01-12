@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import "./loginForm.css";
-import { Link } from 'react-router-dom';
-import setAuthorizationToken from '../../utils/setAuthorizationToken';
+import { BrowserRouter as Router, Route, Switch, Link, Redirect } from "react-router-dom";
 import axios from 'axios';
+
+
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -14,22 +15,10 @@ class LoginForm extends React.Component {
     }
   }
 
-   
-
-      
-  
-
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
   }
 
-  setAuthorizationToken(token) {
-    if (token) {
-      axios.defaults.headers.common['Authorization'] = token;
-    } else {
-      delete axios.defaults.headers.common['Authorization'];
-    }
-  }
   
   onSubmit(e) {
     e.preventDefault();
@@ -39,11 +28,18 @@ class LoginForm extends React.Component {
       return res.json();
     })
     .then(data => {
-      console.log(data);
       sessionStorage.setItem("accessToken", data.accessToken);
-      const activeAccessToken = sessionStorage.getItem("accessToken");
-      setAuthorizationToken(activeAccessToken);
-    });
+    })
+    .then(result => {
+      const currentAccessToken = sessionStorage.getItem('accessToken');
+      if (currentAccessToken) {
+        window.location = '/dashboard';
+      }
+      else {
+        null;
+      }
+    })
+    
   }
 
   render() {

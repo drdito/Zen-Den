@@ -1,5 +1,4 @@
 import axios from 'axios';
-import setAuthorizationToken from '../../../utils/setAuthorizationToken';
 
 export function userLoginRequest(userData) {
   return dispatch => {

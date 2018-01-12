@@ -42,7 +42,7 @@ router.post('/returninguser', (req, res) => {
   
   const hmacHash = hmacSHA256(userPassword, 'secret');
   const serverHash = crypto.enc.Base64.stringify(hmacHash);
-  console.log(serverHash);
+  
   
  
   db.User.findOne({ 
