@@ -1,30 +1,56 @@
 import React, { Component } from "react";
-import Nav from "../../Nav";
-import Container from "../../Bootstrap/Container";
-import Row from "../../Bootstrap/Row";
-import Col from "../../Bootstrap/Col";
-import API from "../../../utils/API";
-import { FormBtn, Input, TextArea } from "../../../components/Form";
-import { List, ListItem } from "../../../components/List";
-import Jumbotron from "../../../components/Jumbotron";
-import "./Blog.css";
-import BlogPostForm from "../../BlogPostForm";
-import BlogPostEntries from "../../BlogPostEntries/BlogPostEntries";
+import Nav from "../Nav";
+import Container from "../Bootstrap/Container";
+import Row from "../Bootstrap/Row";
+import Col from "../Bootstrap/Col";
+import API from "../../utils/API";
+import { FormBtn, Input, TextArea } from "../../components/Form";
+import { List, ListItem } from "../../components/List";
+import Jumbotron from "../../components/Jumbotron";
+// import "./Blog.css";
 
-class Blog extends Component {
+class BlogPostEntries extends Component {
+  state = {
+    blogposts: []
+  };
+
+  componentDidMount() {
+    this.loadBlogPosts();
+  }
+
+  loadBlogPosts = () => {
+    API.getBlogPosts()
+      .then(res => this.setState({ blogposts: res.data }))
+      .catch(err => console.log(err));
+  };
 
   render() {
-    return <Container fluid>
-        <Row>
-          <Col size="lg-12">
-            <Nav />
-          </Col>
-        </Row>
-        <Row>
-          <BlogPostForm />
-          <BlogPostEntries />
-        </Row>
-      </Container>;
+    var date = new Date();
+    return (
+      <Col size="md-6">
+        <Jumbotron>
+          <h1>Prior Blog Posts</h1>
+        </Jumbotron>
+        {this.state.blogposts.length ? (
+          <List>
+            {this.state.blogposts.map(blogposts => (
+              <ListItem key={blogposts._id}>
+                {/* <a> tag could expand, commented out */}
+                {/* <a href={"/blogposts/" + blogposts._id}> */}
+                {blogposts.title}:
+                <br />
+                <br />
+                {blogposts.synopsis}
+                {/* </a> */}
+                {/* <DeleteBtn /> */}
+              </ListItem>
+            ))}
+          </List>
+        ) : (
+          <h3>No Results to Display</h3>
+        )}
+      </Col>
+    );
   }
 }
 
@@ -125,4 +151,4 @@ class Blog extends Component {
   </div>
 ); */
 
-export default Blog;
+export default BlogPostEntries;
