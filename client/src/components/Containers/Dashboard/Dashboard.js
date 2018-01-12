@@ -2,6 +2,10 @@ import React from "react";
 import "./dashboard.css";
 import Container from "../../Bootstrap/Container";
 
+const clearAccessToken = () => {
+  sessionStorage.removeItem('accessToken');
+}
+
 const Dashboard = () => (
   <Container>
         <div className="container">
@@ -21,9 +25,9 @@ const Dashboard = () => (
               </div>
               <div className="col-lg-6 mx-auto header">
             <img className="logo" src="img/ZenDenLogoTrans.png" alt="Zen Den Logo"/>  
-            <a className="logout" href="/login">
+            <a onClick={clearAccessToken} className="logout" href="/">
               <div className="logout">
-               Log Out 
+               Log Out
               </div>
             </a>
               </div>
