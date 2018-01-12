@@ -113,9 +113,6 @@ class ButtonSwitch extends React.Component {
 const Date = (props) => {
   console.log(props.value);
 
-
-  
-  
   return (
     <ButtonSwitch value={props.value} />
   );
