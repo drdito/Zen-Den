@@ -21,7 +21,6 @@ const MoodTracker = () => (
           <Calendar />
         </div>
         </Col>
-        <Col size="lg-1"/>
         <Col size="lg-3">
         <div>
           <MoodTrackerKey />
