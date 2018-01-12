@@ -21,7 +21,7 @@ app.use(express.static('public'));
 
 app.use(express.static(path.join(__dirname, 'client/build')));
 
-// middleware
+// middleware to authorize user routes
 
 var middleware = function (req, res, next) {
   var accessToken = req.get("Authorization");
@@ -41,12 +41,6 @@ var middleware = function (req, res, next) {
   })
 }
 
-var router = express.Router();
-
-router.get('/', function(req, res) {
-  res.send ("We did it!");
-});
-app.use('/test', middleware, router);
 app.use('/api/blog', middleware, blogPosts);
 app.use('/api/users', userData);
 

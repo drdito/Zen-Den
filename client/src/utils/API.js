@@ -20,8 +20,9 @@ export default {
   },
   // Saves a book to the database
   createBlogPost: function(blogPostData) {
-    alert(blogPostData.title);
     const activeAccessToken = sessionStorage.getItem("accessToken");
-    return axios.post("/api/blog", blogPostData);
+    return axios.post("/api/blog", blogPostData, {
+      headers: { Authorization: activeAccessToken }
+    });
   }
 };
