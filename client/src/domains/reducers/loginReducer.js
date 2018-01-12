@@ -1,25 +1,25 @@
-import { userConstants } from '../_constants';
-
-let user = JSON.parse(localStorage.getItem('user'));
-const initialState = user ? { loggedIn: true, user } : {};
-
-export function login(state = initialState, action) {
+export default function loginReducer (state = {
+  isLoginSuccess: false,
+  isLoginPending: false,
+  loginError: null
+}, action) {
   switch (action.type) {
-    case userConstants.LOGIN_REQUEST:
-      return {
-        loggingIn: true,
-        user: action.user
-      };
-    case userConstants.LOGIN_SUCCESS:
-      return {
-        loggedIn: true,
-        user: action.user
-      };
-    case userConstants.LOGIN_FAILURE:
-      return {};
-    case userConstants.LOGOUT:
-      return {};
+    case SET_LOGIN_PENDING:
+      return Object.assign({}, state, {
+        isLoginPending: action.isLoginPending
+      });
+
+    case SET_LOGIN_SUCCESS:
+      return Object.assign({}, state, {
+        isLoginSuccess: action.isLoginSuccess
+      });
+
+    case SET_LOGIN_ERROR:
+      return Object.assign({}, state, {
+        loginError: action.loginError
+      });
+
     default:
-      return state
+      return state;
   }
 }

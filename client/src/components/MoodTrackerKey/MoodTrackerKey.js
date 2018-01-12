@@ -1,11 +1,12 @@
 import React from 'react';
+import "./moodTrackerKey.css";
 
 const MoodTrackerKey = () => {
   return (
     <div className="moodTrackerKey">
       <p className="moodKeyLabel">Mood Key</p>
       <hr />
-      <div className="moodColor" style={{backgroundColor: '#E59ABE'}}>
+      <div className="moodColor" style={{ backgroundColor: '#4fb69a'}}>
         Content
       </div>
 
@@ -13,7 +14,7 @@ const MoodTrackerKey = () => {
         Happy
       </div>
 
-      <div className="moodColor" style={{backgroundColor: '#42FF33'}}>
+      <div className="moodColor" style={{ backgroundColor: '#b64f4f'}}>
         Anxious
       </div>
 
@@ -21,7 +22,7 @@ const MoodTrackerKey = () => {
         Depressed
       </div>
 
-      <div className="moodColor" style={{backgroundColor: '#C30808', color: 'white'}}>
+      <div className="moodColor" style={{ backgroundColor: '#4b2375', color: 'white'}}>
         Angry
       </div>
 

@@ -1,7 +1,16 @@
-import axios from 'axios';
-
-export function userLoginRequest(userData) {
+export function login(email, password) {
   return dispatch => {
-    return axios.post('/api/users/returninguser', userData); 
+    dispatch(setLoginPending(true));
+    dispatch(setLoginSuccess(false));
+    dispatch(setLoginError(null));
+
+    callLoginApi(email, password, error => {
+      dispatch(setLoginPending(false));
+      if (!error) {
+        dispatch(setLoginSuccess(true));
+      } else {
+        dispatch(setLoginError(error));
+      }
+    });
   }
 }
