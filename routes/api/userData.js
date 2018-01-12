@@ -1,12 +1,9 @@
 var mongoose = require("mongoose");
 const router = require("express").Router();
-const userDataController = require("../../controllers/userDataController");
 var crypto = require("crypto-js");
 var hmacSHA256 = require("crypto-js/hmac-sha256");
 const db = require("../../models");
 
-//Hits http://server/api/users
-router.get('/', userDataController.findAll);
 
 router.post('/', (req, res) => {
   const emailAddress = req.body.emailAddress;
