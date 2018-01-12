@@ -10,6 +10,8 @@ class ButtonSwitch extends React.Component {
     this.handleAnxiousClick = this.handleAnxiousClick.bind(this);
     this.handleDepressedClick = this.handleDepressedClick.bind(this);
     this.handleAngryClick = this.handleAngryClick.bind(this);
+    
+    // the state will either be set to the last key in local storage, or it will default to {buttonValue: 0}
     this.state = JSON.parse(localStorage.getItem('key')) || {buttonValue: 0};
 
     // setting the local storage
@@ -58,31 +60,46 @@ class ButtonSwitch extends React.Component {
   render() {
     const buttonValue = this.state.buttonValue;
     console.log(this.state);
+
+    /*
+    let myObj = {};
+    myObj.id = 1;
+    let newArr = [];
+    
+    for (let i = 0; i <= 31; i++ ) {
+      myObj.id = i;
+      newArr.push(myObj.id);
+      console.log(`The ID is: ${newArr[i]}`);
+    }
+    */
+    
+    
+
     
     let button = null;
     switch (buttonValue) {
       case 0: // no mood entered = default white; style comes from .date class on MoodTracker/moodTracker.css
-        button = <button className="date" onClick={this.handleContentClick}>{this.props.value}</button>;
+        button = <button className="date" id={this.props.value} onClick={this.handleContentClick}>{this.props.value}</button>;
         localStorage.setItem('key', JSON.stringify({buttonValue: 0}));
         break;
       case 1: // content mood = dusty rose
-        button = <button className="date" onClick={this.handleHappyClick} style={{backgroundColor: '#E59ABE'}}>{this.props.value}</button>;
+        button = <button className="date" id={this.props.value} onClick={this.handleHappyClick} style={{backgroundColor: '#E59ABE'}}>{this.props.value}</button>;
         localStorage.setItem('key', JSON.stringify({buttonValue: 1}));
         break;
       case 2: // happy mood = goldenrod yellow
-        button = <button className="date" onClick={this.handleAnxiousClick} style={{backgroundColor: '#F7CB1B'}}>{this.props.value}</button>;
+        button = <button className="date" id={this.props.value} onClick={this.handleAnxiousClick} style={{backgroundColor: '#F7CB1B'}}>{this.props.value}</button>;
         localStorage.setItem('key', JSON.stringify({buttonValue: 2}));
         break;      
       case 3: // anxious mood = lime green
-        button = <button className="date" onClick={this.handleDepressedClick} style={{backgroundColor: '#42FF33'}}>{this.props.value}</button>;
+        button = <button className="date" id={this.props.value} onClick={this.handleDepressedClick} style={{backgroundColor: '#42FF33'}}>{this.props.value}</button>;
         localStorage.setItem('key', JSON.stringify({buttonValue: 3}));
         break;
       case 4: // depressed mood = grey blue
-        button = <button className="date" onClick={this.handleAngryClick} style={{backgroundColor: '#515CAA', color: 'white'}}>{this.props.value}</button>;
+        button = <button className="date" id={this.props.value} onClick={this.handleAngryClick} style={{backgroundColor: '#515CAA', color: 'white'}}>{this.props.value}</button>;
         localStorage.setItem('key', JSON.stringify({buttonValue: 4}));
         break;
       case 5: // angry mood = brick red
-        button = <button className="date" onClick={this.handleEmptyClick} style={{backgroundColor: '#C30808', color: 'white'}}>{this.props.value}</button>;
+        button = <button className="date" id={this.props.value} onClick={this.handleEmptyClick} style={{backgroundColor: '#C30808', color: 'white'}}>{this.props.value}</button>;
         localStorage.setItem('key', JSON.stringify({buttonValue: 5}));
         break;
       default:
