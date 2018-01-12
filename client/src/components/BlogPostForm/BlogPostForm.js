@@ -16,7 +16,6 @@ class BlogPostForm extends Component {
   };
 
   createBlogPost = (e) => {
-    alert(e.title);
     API.createBlogPost(e).then(res => this.setState({ title: "", synopsis: "" }));
   };
 
@@ -26,7 +25,6 @@ class BlogPostForm extends Component {
 
   onSubmit() {
     // preventDefault();
-    console.log("hit alert");
     // this.props.userBlogPostRequest(this.state);
     this.createBlogPost(this.state);
   }
