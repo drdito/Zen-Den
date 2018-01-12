@@ -19,8 +19,9 @@ export default {
     return axios.delete("/api/BlogPosts/" + id);
   },
   // Saves a book to the database
-  saveBlogPost: function(blogPostData) {
-    return axios.post("/api/BlogPosts", blogPostData);
+  createBlogPost: function(blogPostData) {
+    const activeAccessToken = sessionStorage.getItem("accessToken");
+    return axios.post("/api/blog", blogPostData);
   }
 };
 
