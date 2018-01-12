@@ -16,7 +16,10 @@ const BlogPostController = require("../../controllers/BlogPostController");
 //     }]);
 // });
 
-router.get('/', BlogPostController.findAll);
+router
+    .route('/')
+    .get(BlogPostController.findAll)
+    .post(BlogPostController.create);
 
 // Matches with "/api/books/:id"
 // router
