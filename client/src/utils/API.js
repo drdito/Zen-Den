@@ -24,7 +24,3 @@ export default {
     return axios.post("/api/blog", blogPostData);
   }
 };
-
-  createBlogPost: function(blogPostData) {
-    const activeAccessToken = sessionStorage.getItem("accessToken");
-    return axios.post("/api/blog", blogPostData);
