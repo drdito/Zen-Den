@@ -28,7 +28,7 @@ router.post('/', (req, res) => {
     lastName: req.body.lastName,
     accessToken: accessToken
   })
-});
+  });
 
 let login = {
   firstName: '',
@@ -38,12 +38,19 @@ let login = {
 
 router.post('/returninguser', (req, res) => {
   const requestedEmail = req.body.emailAddress;
-  const userPassword = req.body.password
+  const userPassword = req.body.password;
+  login = {
+    firstName: '',
+    lastName: '',
+    accessToken: ''
+  };
   
   const hmacHash = hmacSHA256(userPassword, 'secret');
   const serverHash = crypto.enc.Base64.stringify(hmacHash);
   
-  
+  router.get("/returninguser", (req, res) => {
+    res.json(login);
+  });
  
   db.User.findOne({ 
     'email': requestedEmail 
@@ -72,9 +79,7 @@ router.post('/returninguser', (req, res) => {
   });  
 });
 
-router.get("/returninguser", (req, res) => {
-  res.json(login);
-});
+
 
 
 
