@@ -66,7 +66,7 @@ class ButtonSwitch extends React.Component {
         localStorage.setItem('key', JSON.stringify({buttonValue: 0}));
         break;
       case 1: // content mood = dusty rose
-        button = <button className="date" onClick={this.handleHappyClick} style={{backgroundColor: '#E59ABE'}}>{this.props.value}</button>;
+        button = <button className="date" onClick={this.handleHappyClick} style={{ backgroundColor: '#4fb69a'}}>{this.props.value}</button>;
         localStorage.setItem('key', JSON.stringify({buttonValue: 1}));
         break;
       case 2: // happy mood = goldenrod yellow
@@ -74,7 +74,7 @@ class ButtonSwitch extends React.Component {
         localStorage.setItem('key', JSON.stringify({buttonValue: 2}));
         break;      
       case 3: // anxious mood = lime green
-        button = <button className="date" onClick={this.handleDepressedClick} style={{backgroundColor: '#42FF33'}}>{this.props.value}</button>;
+        button = <button className="date" onClick={this.handleDepressedClick} style={{ backgroundColor: '#b64f4f'}}>{this.props.value}</button>;
         localStorage.setItem('key', JSON.stringify({buttonValue: 3}));
         break;
       case 4: // depressed mood = grey blue
@@ -82,7 +82,7 @@ class ButtonSwitch extends React.Component {
         localStorage.setItem('key', JSON.stringify({buttonValue: 4}));
         break;
       case 5: // angry mood = brick red
-        button = <button className="date" onClick={this.handleEmptyClick} style={{backgroundColor: '#C30808', color: 'white'}}>{this.props.value}</button>;
+        button = <button className="date" onClick={this.handleEmptyClick} style={{ backgroundColor: '#4b2375', color: 'white'}}>{this.props.value}</button>;
         localStorage.setItem('key', JSON.stringify({buttonValue: 5}));
         break;
       default:
