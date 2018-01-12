@@ -1,30 +1,62 @@
 import React, { Component } from "react";
-import Nav from "../../Nav";
-import Container from "../../Bootstrap/Container";
-import Row from "../../Bootstrap/Row";
-import Col from "../../Bootstrap/Col";
-import API from "../../../utils/API";
-import { FormBtn, Input, TextArea } from "../../../components/Form";
-import { List, ListItem } from "../../../components/List";
-import Jumbotron from "../../../components/Jumbotron";
-import "./Blog.css";
-import BlogPostForm from "../../BlogPostForm";
-import BlogPostEntries from "../../BlogPostEntries/BlogPostEntries";
+import Nav from "../Nav";
+import Container from "../Bootstrap/Container";
+import Row from "../Bootstrap/Row";
+import Col from "../Bootstrap/Col";
+import API from "../../utils/API";
+import { FormBtn, Input, TextArea } from "../../components/Form";
+import { List, ListItem } from "../../components/List";
+import Jumbotron from "../../components/Jumbotron";
+// import "./Blog.css";
 
-class Blog extends Component {
+class BlogPostForm extends Component {
+  state = {
+    title: "",
+    synopsis: ""
+  };
+
+  createBlogPost = (e) => {
+    alert(e.title);
+    API.createBlogPost(e).then(res => this.setState({ title: "", synopsis: "" }));
+  };
+
+  onChange(e) {
+    this.setState({ [e.target.name]: e.target.value });
+  }
+
+  onSubmit() {
+    // preventDefault();
+    console.log("hit alert");
+    // this.props.userBlogPostRequest(this.state);
+    this.createBlogPost(this.state);
+  }
 
   render() {
-    return <Container fluid>
-        <Row>
-          <Col size="lg-12">
-            <Nav />
+    var date = new Date();
+    return (
+      
+          <Col size="md-6">
+            <Jumbotron>
+              <h1>Create a Blog Post!</h1>
+            </Jumbotron>
+            <form action="">
+              <Input
+                name="title"
+                value={this.state.title}
+                onChange={this.onChange.bind(this)}
+                placeholder="Title (required)"
+              />
+              <Input name="date" value={date.toDateString()} />
+              <TextArea
+                name="synopsis"
+                value={this.state.synopsis}
+                onChange={this.onChange.bind(this)}
+                placeholder="Post (required)"
+              />
+              <FormBtn onClick={() => this.onSubmit()}>Submit Post</FormBtn>
+            </form>
           </Col>
-        </Row>
-        <Row>
-          <BlogPostForm />
-          <BlogPostEntries />
-        </Row>
-      </Container>;
+    );
   }
 }
 
@@ -125,4 +157,4 @@ class Blog extends Component {
   </div>
 ); */
 
-export default Blog;
+export default BlogPostForm;
