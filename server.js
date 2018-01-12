@@ -1,10 +1,8 @@
-
 //Bringing in necessary dependencies.
 var express = require('express');
 var mongoose = require('mongoose');
 var PORT = process.env.PORT || 3001;
 var bodyParser = require('body-parser');
-var users = require('./routes/users');
 var path = require('path');
 var blogPosts = require('./routes/api/BlogPosts');
 var userData = require('./routes/api/userData');
@@ -25,8 +23,31 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 
 // middleware
 
+var middleware = function (req, res, next) {
+  var accessToken = req.get("Authorization");
+  console.log(accessToken);
+  db.User 
+  .findOne ({
+    accessToken
+  })
+  .then(function(userData) {
+    if (userData) {
+      req.user = userData;
+      next();
+    }
+    else {
+      res.status(401).send ("Unauthorized")
+    } 
+  })
+}
 
-app.use('/api/blog', blogPosts);
+var router = express.Router();
+
+router.get('/', function(req, res) {
+  res.send ("We did it!");
+});
+app.use('/test', middleware, router);
+app.use('/api/blog', middleware, blogPosts);
 app.use('/api/users', userData);
 
 

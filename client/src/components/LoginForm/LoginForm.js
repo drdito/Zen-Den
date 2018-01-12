@@ -1,7 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import "./loginForm.css";
-import { Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Link, Redirect } from "react-router-dom";
+import axios from 'axios';
+
+
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -12,14 +15,10 @@ class LoginForm extends React.Component {
     }
   }
 
-   
-
-      
-  
-
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
   }
+
   
   onSubmit(e) {
     e.preventDefault();
@@ -29,10 +28,18 @@ class LoginForm extends React.Component {
       return res.json();
     })
     .then(data => {
-      console.log(data);
       sessionStorage.setItem("accessToken", data.accessToken);
-      const activeAccessToken = sessionStorage.getItem("accessToken");
-    });
+    })
+    .then(result => {
+      const currentAccessToken = sessionStorage.getItem('accessToken');
+      if (currentAccessToken) {
+        window.location = '/dashboard';
+      }
+      else {
+        null;
+      }
+    })
+    
   }
 
   render() {
@@ -46,7 +53,7 @@ class LoginForm extends React.Component {
         <label htmlFor="inputPassword" className="sr-only">Password</label>
         <input name="password" value={this.state.password} onChange={this.onChange.bind(this)} type="password" id="inputPassword" className="form-control" placeholder="Password" required />
 
-        <Link to="/dashboard"><button className="btn btn-lg btn-primary btn-block signIn" type="submit">Sign In</button></Link>
+        <button className="btn btn-lg btn-primary btn-block signIn" type="submit">Sign In</button>
       </form>
     );
   }
