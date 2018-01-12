@@ -4,7 +4,9 @@ export default {
   // Gets all books
   getBlogPosts: function() {
     const activeAccessToken = sessionStorage.getItem("accessToken");
-    return axios.get("/api/blog", { headers: { Authorization: activeAccessToken } });
+    return axios.get("/api/blog", {
+      headers: { Authorization: activeAccessToken }
+    });
   },
   // Gets the book with the given id
   getBlog: function(id) {
@@ -23,5 +25,5 @@ export default {
 };
 
   createBlogPost: function(blogPostData) {
-    alert(blogPostData.title);
+    const activeAccessToken = sessionStorage.getItem("accessToken");
     return axios.post("/api/blog", blogPostData);
