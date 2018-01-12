@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Link} from "react-router-dom";
 
 class SignUpForm extends React.Component {
   constructor(props) {
@@ -7,7 +8,6 @@ class SignUpForm extends React.Component {
     this.state ={
       emailAddress: '',
       password: '',
-      passwordConfirm: '',
       firstName: '',
       lastName: ''
     }
@@ -33,9 +33,6 @@ class SignUpForm extends React.Component {
         <label htmlFor="inputPassword" className="sr-only">Password</label>
         <input name="password" value={this.state.password} onChange={this.onChange.bind(this)} type="password" id="inputPassword" className="form-control" placeholder="Password" required />
         
-        <label htmlFor="inputPasswordConfirm" className="sr-only">Password Confirm</label>
-        <input name="passwordConfirm" value={this.state.passwordConfirm} onChange={this.onChange.bind(this)} type="password" id="inputPasswordConfirm" className="form-control" placeholder="Password" required />
-        
         <br/>
         
         <label htmlFor="firstName" className="sr-only">First Name</label>
@@ -47,6 +44,8 @@ class SignUpForm extends React.Component {
         <br />
         
         <button className="btn btn-lg btn-primary btn-block signUp" type="submit">Sign Up!</button>
+        <br/>
+        <Link to="/"><button className="btn btn-lg btn-primary btn-block signUp" type="submit">Return to Login</button></Link>
       </form>
     );
   }

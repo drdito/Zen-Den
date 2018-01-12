@@ -1,6 +1,11 @@
 import React from "react";
 import "./nav.css";
 
+const destoryAccessToken = () => {
+  sessionStorage.removeItem('accessToken');
+  window.location = '/';
+}
+
 const Nav = () => (
   <nav className="navbar navbar-expand-lg navbar-dark">
     <span className="navbar-brand mb-0 h1" id="brand"><img src="./img/ZenDenLogoTransparent.png" width="30" height="30" alt="logo"/>Zen Den</span>
@@ -26,7 +31,7 @@ const Nav = () => (
           <a className="nav-link" href="/resources">Resources</a>
         </li>
         <li className="nav-item">
-          <a className="nav-link" href="/">Log Out</a>
+          <a onClick={destoryAccessToken} className="nav-link">Log Out</a>
         </li>
       </ul>
     </div>
