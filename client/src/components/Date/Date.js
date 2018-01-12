@@ -26,7 +26,6 @@ class ButtonSwitch extends React.Component {
     }
   }
 
-
   handleEmptyClick() {
     console.log("FUNCTION EMPTY FIRE");
     this.setState({buttonValue: 0});
@@ -72,9 +71,6 @@ class ButtonSwitch extends React.Component {
       console.log(`The ID is: ${newArr[i]}`);
     }
     */
-    
-    
-
     
     let button = null;
     switch (buttonValue) {
