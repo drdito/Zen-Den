@@ -4,7 +4,7 @@ import Container from '../../Bootstrap/Container';
 import SignUpForm from '../../SignUpForm';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { userSignupRequest } from '../../../domains/domainSignUp/actions/signupActions';
+import { userSignupRequest } from '../../../domains/actions/signupActions';
 
 
 

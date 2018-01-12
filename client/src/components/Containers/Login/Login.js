@@ -5,7 +5,7 @@ import LoginForm from '../../LoginForm';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { userLoginRequest } from '../../../domains/domainLogin/actions/loginAction';
+import { userLoginRequest } from '../../../domains/actions/loginAction';
 
 
 
