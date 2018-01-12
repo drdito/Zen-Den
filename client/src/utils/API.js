@@ -3,7 +3,10 @@ import axios from "axios";
 export default {
   // Gets all books
   getBlogPosts: function() {
-    return axios.get("/api/blog");
+    const activeAccessToken = sessionStorage.getItem("accessToken");
+    return axios.get("/api/blog", {
+      headers: { Authorization: activeAccessToken }
+    });
   },
   // Gets the book with the given id
   getBlog: function(id) {
@@ -15,7 +18,7 @@ export default {
   },
   // Saves a book to the database
   createBlogPost: function(blogPostData) {
-    alert(blogPostData.title);
+    const activeAccessToken = sessionStorage.getItem("accessToken");
     return axios.post("/api/blog", blogPostData);
   }
 };
