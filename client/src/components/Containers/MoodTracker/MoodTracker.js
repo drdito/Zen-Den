@@ -15,21 +15,20 @@ const MoodTracker = () => (
       </Col>
     </Row>
     <Container>
-      <Row>
-
-        <Col size="lg-8 offset-lg-1">
-        <div>
-          <Calendar />
-        </div>
-        </Col>
-
-        <Col size="lg-3">
-        <div>
-          <MoodTrackerKey />
-        </div>
-        </Col>
-        
-      </Row>
+      <div id="trackerDiv">
+        <Row>
+          <Col size="lg-8 offset-lg-1">
+          <div>
+            <Calendar />
+          </div>
+          </Col>
+          <Col size="lg-3">
+          <div>
+            <MoodTrackerKey />
+          </div>
+          </Col>
+        </Row>
+      </div>
     </Container> 
   </div>
 );
