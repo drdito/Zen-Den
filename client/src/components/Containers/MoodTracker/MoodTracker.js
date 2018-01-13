@@ -17,7 +17,7 @@ const MoodTracker = () => (
     <Container>
       <Row>
 
-        <Col size="lg-8">
+        <Col size="lg-8 offset-lg-1">
         <div>
           <Calendar />
         </div>
