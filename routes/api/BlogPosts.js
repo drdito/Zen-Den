@@ -16,10 +16,10 @@ const BlogPostController = require("../../controllers/BlogPostController");
 //     }]);
 // });
 
-router
-    .route('/')
-    .get(BlogPostController.findAll)
-    .post(BlogPostController.create);
+// router
+//     .route('/')
+//     .get(BlogPostController.findAll)
+//     .post(BlogPostController.create);
 
 // Matches with "/api/books/:id"
 // router
@@ -27,5 +27,29 @@ router
 //   .get(BlogPostController.findById)
 //   .put(BlogPostController.update)
 //   .delete(BlogPostController.remove);
+
+const db = require("../../models");
+
+router.get("/", (req, res) => {
+  console.log("req.user");
+    console.log(req.user.accessToken);
+  db.BlogPost.find({ accessToken: req.user.accessToken })
+    .then(dbModel => res.json(dbModel))
+    .catch(err => res.status(422).json(err));
+});
+
+router.post("/", (req, res) => {
+  const title = req.body.title;
+  const date = req.body.date;
+  const synopsis = req.body.synopsis;
+  const accessToken = req.get("Authorization");
+
+  db.BlogPost.create({
+    title: title,
+    date: date,
+    synopsis: synopsis,
+    accessToken: accessToken
+  });
+});
 
 module.exports = router;

@@ -15,8 +15,10 @@ class BlogPostForm extends Component {
     synopsis: ""
   };
 
-  createBlogPost = (e) => {
-    API.createBlogPost(e).then(res => this.setState({ title: "", synopsis: "" }));
+  createBlogPost = e => {
+    API.createBlogPost(e).then(res =>
+      this.setState({ title: "", synopsis: "" })
+    );
   };
 
   onChange(e) {
@@ -32,28 +34,27 @@ class BlogPostForm extends Component {
   render() {
     var date = new Date();
     return (
-      
-          <Col size="md-6">
-            <Jumbotron>
-              <h1>Create a Blog Post!</h1>
-            </Jumbotron>
-            <form action="">
-              <Input
-                name="title"
-                value={this.state.title}
-                onChange={this.onChange.bind(this)}
-                placeholder="Title (required)"
-              />
-              <Input name="date" value={date.toDateString()} />
-              <TextArea
-                name="synopsis"
-                value={this.state.synopsis}
-                onChange={this.onChange.bind(this)}
-                placeholder="Post (required)"
-              />
-              <FormBtn onClick={() => this.onSubmit()}>Submit Post</FormBtn>
-            </form>
-          </Col>
+      <Col size="md-6">
+        <Jumbotron>
+          <h1>Create a Blog Post!</h1>
+        </Jumbotron>
+        <form action="">
+          <Input
+            name="title"
+            value={this.state.title}
+            onChange={this.onChange.bind(this)}
+            placeholder="Title (required)"
+          />
+          <Input name="date" value={date.toDateString()} />
+          <TextArea
+            name="synopsis"
+            value={this.state.synopsis}
+            onChange={this.onChange.bind(this)}
+            placeholder="Post (required)"
+          />
+          <FormBtn onClick={() => this.onSubmit()}>Submit Post</FormBtn>
+        </form>
+      </Col>
     );
   }
 }
