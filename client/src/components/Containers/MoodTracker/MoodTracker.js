@@ -16,16 +16,19 @@ const MoodTracker = () => (
     </Row>
     <Container>
       <Row>
-        <Col size="lg-8">
+
+        <Col size="lg-8 offset-lg-1">
         <div>
           <Calendar />
         </div>
         </Col>
+
         <Col size="lg-3">
         <div>
           <MoodTrackerKey />
         </div>
         </Col>
+        
       </Row>
     </Container> 
   </div>

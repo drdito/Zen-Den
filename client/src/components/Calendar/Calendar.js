@@ -4,6 +4,7 @@ import React from 'react';
 import Date from '../Date'; 
 import Day from '../Day';
 import NullBox from '../NullBox';
+import "./calendar.css";
 
 class Calendar extends React.Component {
 
@@ -14,16 +15,6 @@ class Calendar extends React.Component {
        <Date value={i} />
     ); 
   }
-
- 
-  renderNormalDate(i) {
-    return ( 
-      // value prop is being passed down to Date component
-       <Date value={i} />
-    ); 
-  }
-
-  
 
   renderDay(i) {
     return ( 
@@ -43,7 +34,7 @@ class Calendar extends React.Component {
     // Hard coding calendar for January 2018.
     // I need to find a way to generate calendars dynamically
     return(
-      <div> 
+      <div className="leCalendar"> 
         <div className="calendar-name">
           <p>January 2018</p>
         </div>
