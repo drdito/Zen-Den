@@ -36,7 +36,7 @@ class LoginForm extends React.Component {
         window.location = '/dashboard';
       }
       else {
-        null;
+        window.location = '/badlogin';
       }
     })
     

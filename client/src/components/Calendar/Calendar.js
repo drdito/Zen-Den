@@ -1,28 +1,19 @@
 // Calendar Component
 // Displays the calendar for users to click on
 import React from 'react';
-//import Date from '../Date'; 
+import Date from '../Date'; 
 import Day from '../Day';
 import NullBox from '../NullBox';
 
 class Calendar extends React.Component {
+
   
   renderSquare(i) {
-    // return ( 
-    //   // value prop is being passed down to Date component
-    //    <Date value={i} />
-    // ); 
-  }
-
-  /*
-  renderNormalDate(i) {
     return ( 
       // value prop is being passed down to Date component
        <Date value={i} />
     ); 
   }
-  */
-  
 
   renderDay(i) {
     return ( 

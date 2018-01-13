@@ -17,7 +17,7 @@ const MoodTrackerKey = () => {
         Anxious
       </div>
 
-      <div className="moodColor" style={{backgroundColor: '#515CAA', color: 'white'}}>
+      <div className="moodColor" style={{backgroundColor: '#515CAA', color: 'white', fontSize: '16px'}}>
         Depressed
       </div>
 
