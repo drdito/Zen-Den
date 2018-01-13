@@ -1,0 +1,13 @@
+#blogSubmit {
+  background-color: #282643;
+  box-shadow: inset 0 0 0 3px #706e96;
+  color: #706e96;
+  border: none;
+  font-family: 'Lora',
+  serif;
+}
+
+#blogSubmit:hover {
+  background-color: #706e96;
+  color: white;
+}
