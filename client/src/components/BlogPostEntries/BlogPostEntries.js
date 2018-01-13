@@ -7,6 +7,7 @@ import API from "../../utils/API";
 import { FormBtn, Input, TextArea } from "../../components/Form";
 import { List, ListItem } from "../../components/List";
 import Jumbotron from "../../components/Jumbotron";
+import Moment from "react-moment";
 // import "./Blog.css";
 
 class BlogPostEntries extends Component {
@@ -24,8 +25,8 @@ class BlogPostEntries extends Component {
       .catch(err => console.log(err));
   };
 
+
   render() {
-    var date = new Date();
     return (
       <Col size="md-6">
         <Jumbotron>
@@ -38,6 +39,10 @@ class BlogPostEntries extends Component {
                 {/* <a> tag could expand, commented out */}
                 {/* <a href={"/blogposts/" + blogposts._id}> */}
                 {blogposts.title}:
+                <br />
+                <Moment format="MM/DD/YYYY">
+                  {blogposts.date}
+                </Moment>
                 <br />
                 <br />
                 {blogposts.synopsis}
