@@ -8,6 +8,7 @@ import { FormBtn, Input, TextArea } from "../../components/Form";
 import { List, ListItem } from "../../components/List";
 import Jumbotron from "../../components/Jumbotron";
 import Moment from "react-moment";
+import "./blogPostEntries.css";
 // import "./Blog.css";
 
 class BlogPostEntries extends Component {
@@ -28,7 +29,7 @@ class BlogPostEntries extends Component {
 
   render() {
     return (
-      <Col size="md-6">
+      <Col size="col-lg-12">
         <Jumbotron>
           <h1>Prior Blog Posts</h1>
         </Jumbotron>
@@ -36,8 +37,6 @@ class BlogPostEntries extends Component {
           <List>
             {this.state.blogposts.map(blogposts => (
               <ListItem key={blogposts._id}>
-                {/* <a> tag could expand, commented out */}
-                {/* <a href={"/blogposts/" + blogposts._id}> */}
                 {blogposts.title}:
                 <br />
                 <Moment format="MM/DD/YYYY">
@@ -46,8 +45,6 @@ class BlogPostEntries extends Component {
                 <br />
                 <br />
                 {blogposts.synopsis}
-                {/* </a> */}
-                {/* <DeleteBtn /> */}
               </ListItem>
             ))}
           </List>

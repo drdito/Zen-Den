@@ -7,7 +7,7 @@ import API from "../../utils/API";
 import { FormBtn, Input, TextArea } from "../../components/Form";
 import { List, ListItem } from "../../components/List";
 import Jumbotron from "../../components/Jumbotron";
-// import "./Blog.css";
+import "./blogPostForm.css";
 
 class BlogPostForm extends Component {
   state = {
@@ -34,7 +34,7 @@ class BlogPostForm extends Component {
   render() {
     var date = new Date();
     return (
-      <Col size="md-6">
+      <Col size="col-lg-12">
         <Jumbotron>
           <h1>Create a Blog Post!</h1>
         </Jumbotron>
@@ -52,7 +52,7 @@ class BlogPostForm extends Component {
             onChange={this.onChange.bind(this)}
             placeholder="Post (required)"
           />
-          <FormBtn onClick={() => this.onSubmit()}>Submit Post</FormBtn>
+          <FormBtn id="blogSubmit" onClick={() => this.onSubmit()}>Submit Post</FormBtn>
         </form>
       </Col>
     );
